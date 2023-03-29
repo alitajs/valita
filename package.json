@@ -1,0 +1,54 @@
+{
+  "name": "valita",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/alitajs/valita#readme",
+  "bugs": {
+    "url": "https://github.com/alitajs/valita/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alitajs/valita.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "lerna run build",
+    "dev": "lerna run dev",
+    "format": "prettier --cache --write .",
+    "postinstall": "npm run build",
+    "lint": "vs lint",
+    "lint:es": "vs lint --eslint-only",
+    "lint:es-fix": "vs lint --eslint-only --fix",
+    "lint:style": "vs lint --stylelint-only",
+    "lint:style-fix": "vs lint --stylelint-only --fix",
+    "prepare": "is-ci || husky install",
+    "prepublish": "pnpm run build",
+    "release": "lerna publish --force-publish=*",
+    "start": "cd examples/demo && npm run start"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@umijs/lint": "4.0.63",
+    "@umijs/utils": "4.0.63",
+    "consola": "^2.15.3",
+    "eslint": "^8.35.0",
+    "father": "^4.1.5",
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.1",
+    "lerna": "^6.5.1",
+    "prettier": "^2.8.4",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.3",
+    "start-server-and-test": "^1.15.3",
+    "stylelint": "^15.2.0",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5",
+    "vs": "workspace:*",
+    "webpack": "^5.76.3"
+  },
+  "packageManager": "pnpm@7.24.2"
+}

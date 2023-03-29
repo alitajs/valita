@@ -1,0 +1,39 @@
+{
+  "name": "valita",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "umi",
+    "vue",
+    "vue@3",
+    "alita"
+  ],
+  "homepage": "https://github.com/alitajs/valita#readme",
+  "bugs": {
+    "url": "https://github.com/alitajs/valita/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alitajs/valita.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bin": {
+    "valita": "bin/valita.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build",
+    "dev": "father dev"
+  },
+  "dependencies": {
+    "@umijs/preset-vue": "4.0.63",
+    "@umijs/utils": "4.0.63",
+    "umi": "4.0.63"
+  }
+}
