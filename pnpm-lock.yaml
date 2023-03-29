@@ -42,6 +42,23 @@ importers:
       vs: link:scripts
       webpack: registry.npmjs.org/webpack/5.76.3
 
+  examples/abc:
+    specifiers:
+      babel-plugin-import: ^1.13.6
+      consola: ^2.15.3
+      valita: 0.0.2-alpha.0
+      vant: 4.0.11
+      vite-plugin-style-import: 2.0.0
+      vue: 3.2.45
+    dependencies:
+      valita: link:../../packages/valita
+      vant: registry.npmjs.org/vant/4.0.11_vue@3.2.45
+      vue: registry.npmjs.org/vue/3.2.45
+    devDependencies:
+      babel-plugin-import: registry.npmjs.org/babel-plugin-import/1.13.6
+      consola: registry.npmjs.org/consola/2.15.3
+      vite-plugin-style-import: registry.npmjs.org/vite-plugin-style-import/2.0.0
+
   examples/demo:
     specifiers:
       babel-plugin-import: ^1.13.6
@@ -56,6 +73,12 @@ importers:
     devDependencies:
       babel-plugin-import: registry.npmjs.org/babel-plugin-import/1.13.6
       vite-plugin-style-import: registry.npmjs.org/vite-plugin-style-import/2.0.0
+
+  packages/create-valita:
+    specifiers:
+      '@umijs/utils': 4.0.63
+    dependencies:
+      '@umijs/utils': registry.npmjs.org/@umijs/utils/4.0.63
 
   packages/valita:
     specifiers:

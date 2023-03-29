@@ -1,0 +1,30 @@
+{
+  "name": "create-valita",
+  "version": "0.0.2-alpha.0",
+  "description": "create-valita",
+  "homepage": "https://github.com/alitajs/valita#readme",
+  "bugs": {
+    "url": "https://github.com/alitajs/valita/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alitajs/valita.git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "create-valita": "bin/create-valita.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "father build",
+    "dev": "father dev"
+  },
+  "dependencies": {
+    "@umijs/utils": "4.0.63"
+  }
+}
