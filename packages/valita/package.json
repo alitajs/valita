@@ -1,6 +1,6 @@
 {
   "name": "valita",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.2-alpha.0",
   "description": "",
   "keywords": [
     "umi",
@@ -35,5 +35,6 @@
     "@umijs/preset-vue": "4.0.63",
     "@umijs/utils": "4.0.63",
     "umi": "4.0.63"
-  }
+  },
+  "gitHead": "ef59fa4ef0bdaf2a5ebaa19722a41fabb328f010"
 }
