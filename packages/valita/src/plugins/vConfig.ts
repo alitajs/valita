@@ -4,6 +4,18 @@ export default (api: IApi) => {
   const configDefaults: Record<string, any> = {
     vue: {},
     mfsu: false,
+    // lowImport: {
+    //   libs: [
+    //     {
+    //       importFrom: 'vue',
+    //       members: ['computed', 'ref'],
+    //     },
+    //     {
+    //       importFrom: 'pinia',
+    //       members: ['defineStore'],
+    //     },
+    //   ],
+    // },
     ...api.userConfig,
   };
   if (api.userConfig.complexRoute) {

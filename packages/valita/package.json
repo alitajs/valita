@@ -32,9 +32,11 @@
     "dev": "father dev"
   },
   "dependencies": {
+    "@alitajs/vue-pinia": "workspace:*",
     "@umijs/preset-vue": "4.0.63",
     "@umijs/utils": "4.0.63",
-    "umi": "4.0.63"
+    "umi": "4.0.63",
+    "vue": "3.2.45"
   },
   "gitHead": "b4fea14422353614d8676e5b116ad35b187edba1"
 }

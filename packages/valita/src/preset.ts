@@ -5,6 +5,7 @@ export default () => {
       require.resolve('./plugins/vAppData'),
       require.resolve('./plugins/vChecker'),
       require.resolve('./plugins/vConfig'),
+      require.resolve('@alitajs/vue-pinia'),
     ],
   };
 };
