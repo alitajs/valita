@@ -1,7 +1,7 @@
-import type { IApi } from 'valita';
-import VComponents from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
-import RComponents  from 'unplugin-vue-components/webpack'
+import VComponents from 'unplugin-vue-components/vite';
+import RComponents from 'unplugin-vue-components/webpack';
+import type { IApi } from 'valita';
 
 export default (api: IApi) => {
   api.modifyHTML(($) => {
