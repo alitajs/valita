@@ -1,6 +1,5 @@
 <template>
-  <div>
-    users layout
-    <router-view></router-view>
-  </div>
-</template>
+    <div>
+      users layout
+    </div>
+  </template>

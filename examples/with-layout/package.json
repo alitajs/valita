@@ -1,5 +1,5 @@
 {
-  "name": "@example/demo",
+  "name": "@example/with-layout",
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=1 valita build",
