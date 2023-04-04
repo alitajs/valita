@@ -67,9 +67,6 @@ importers:
 
   examples/demo:
     dependencies:
-      '@alitajs/vue-layout':
-        specifier: workspace:*
-        version: link:../../packages/layout
       valita:
         specifier: workspace:*
         version: link:../../packages/valita
@@ -92,11 +89,8 @@ importers:
       '@alitajs/vue-layout':
         specifier: workspace:*
         version: link:../../packages/layout
-      unplugin-vue-components:
-        specifier: ^0.24.1
-        version: registry.npmjs.org/unplugin-vue-components@0.24.1(vue@3.2.45)
       valita:
-        specifier: 0.0.2-alpha.0
+        specifier: workspace:*
         version: link:../../packages/valita
       vant:
         specifier: 4.0.11
@@ -105,9 +99,9 @@ importers:
         specifier: 3.2.45
         version: registry.npmjs.org/vue@3.2.45
     devDependencies:
-      consola:
-        specifier: ^2.15.3
-        version: registry.npmjs.org/consola@2.15.3
+      unplugin-vue-components:
+        specifier: ^0.24.1
+        version: registry.npmjs.org/unplugin-vue-components@0.24.1(vue@3.2.45)
 
   examples/with-pinia:
     dependencies:
@@ -210,7 +204,6 @@ packages:
     resolution: {integrity: sha512-vy9fM3pIxZmX07dL+VX1aZe7ynZ+YyB0jY+jE6r3hOK6GNY2t6W8rzpFC4tgpbXUYABkFQwgJq2XYXlxbXAI0g==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@antfu/utils/-/utils-0.7.2.tgz}
     name: '@antfu/utils'
     version: 0.7.2
-    dev: false
 
   registry.npmjs.org/@babel/code-frame@7.18.6:
     resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.18.6.tgz}
@@ -2535,7 +2528,6 @@ packages:
       '@types/estree': registry.npmjs.org/@types/estree@1.0.0
       estree-walker: registry.npmjs.org/estree-walker@2.0.2
       picomatch: registry.npmjs.org/picomatch@2.3.1
-    dev: false
 
   registry.npmjs.org/@rushstack/node-core-library@3.55.1(@types/node@18.15.11):
     resolution: {integrity: sha512-t/nZHq4/4S3ltpYVyIsbbIqmcZx3qEe3Aaw8tI9B6XRNqCFzPxtoTopqTPTuRn8XqCtoDaSe6uMlnn7YCTu8lQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rushstack/node-core-library/-/node-core-library-3.55.1.tgz}
@@ -2877,7 +2869,6 @@ packages:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz}
     name: '@types/estree'
     version: 1.0.0
-    dev: false
 
   registry.npmjs.org/@types/fs-extra@11.0.1:
     resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@types/fs-extra/-/fs-extra-11.0.1.tgz}
@@ -3813,7 +3804,6 @@ packages:
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
       estree-walker: registry.npmjs.org/estree-walker@2.0.2
       source-map: registry.npmjs.org/source-map@0.6.1
-    dev: false
 
   registry.npmjs.org/@vue/compiler-dom@3.2.45:
     resolution: {integrity: sha512-tyYeUEuKqqZO137WrZkpwfPCdiiIeXYCcJ8L4gWz9vqaxzIQRccTSwSWZ/Axx5YR2z+LvpUbmPNXxuBU45lyRw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.2.45.tgz}
@@ -3822,7 +3812,6 @@ packages:
     dependencies:
       '@vue/compiler-core': registry.npmjs.org/@vue/compiler-core@3.2.45
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
-    dev: false
 
   registry.npmjs.org/@vue/compiler-sfc@3.2.45:
     resolution: {integrity: sha512-1jXDuWah1ggsnSAOGsec8cFjT/K6TMZ0sPL3o3d84Ft2AYZi2jWJgRMjw4iaK0rBfA89L5gw427H4n1RZQBu6Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.2.45.tgz}
@@ -3839,7 +3828,6 @@ packages:
       magic-string: registry.npmjs.org/magic-string@0.25.9
       postcss: registry.npmjs.org/postcss@8.4.21
       source-map: registry.npmjs.org/source-map@0.6.1
-    dev: false
 
   registry.npmjs.org/@vue/compiler-ssr@3.2.45:
     resolution: {integrity: sha512-6BRaggEGqhWht3lt24CrIbQSRD5O07MTmd+LjAn5fJj568+R9eUD2F7wMQJjX859seSlrYog7sUtrZSd7feqrQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.2.45.tgz}
@@ -3848,7 +3836,6 @@ packages:
     dependencies:
       '@vue/compiler-dom': registry.npmjs.org/@vue/compiler-dom@3.2.45
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
-    dev: false
 
   registry.npmjs.org/@vue/devtools-api@6.5.0:
     resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.5.0.tgz}
@@ -3866,7 +3853,6 @@ packages:
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
       estree-walker: registry.npmjs.org/estree-walker@2.0.2
       magic-string: registry.npmjs.org/magic-string@0.25.9
-    dev: false
 
   registry.npmjs.org/@vue/reactivity@3.2.45:
     resolution: {integrity: sha512-PRvhCcQcyEVohW0P8iQ7HDcIOXRjZfAsOds3N99X/Dzewy8TVhTCT4uXpAHfoKjVTJRA0O0K+6QNkDIZAxNi3A==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.2.45.tgz}
@@ -3874,7 +3860,6 @@ packages:
     version: 3.2.45
     dependencies:
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
-    dev: false
 
   registry.npmjs.org/@vue/runtime-core@3.2.45:
     resolution: {integrity: sha512-gzJiTA3f74cgARptqzYswmoQx0fIA+gGYBfokYVhF8YSXjWTUA2SngRzZRku2HbGbjzB6LBYSbKGIaK8IW+s0A==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.2.45.tgz}
@@ -3883,7 +3868,6 @@ packages:
     dependencies:
       '@vue/reactivity': registry.npmjs.org/@vue/reactivity@3.2.45
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
-    dev: false
 
   registry.npmjs.org/@vue/runtime-dom@3.2.45:
     resolution: {integrity: sha512-cy88YpfP5Ue2bDBbj75Cb4bIEZUMM/mAkDMfqDTpUYVgTf/kuQ2VQ8LebuZ8k6EudgH8pYhsGWHlY0lcxlvTwA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.2.45.tgz}
@@ -3893,7 +3877,6 @@ packages:
       '@vue/runtime-core': registry.npmjs.org/@vue/runtime-core@3.2.45
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
       csstype: registry.npmjs.org/csstype@2.6.21
-    dev: false
 
   registry.npmjs.org/@vue/server-renderer@3.2.45(vue@3.2.45):
     resolution: {integrity: sha512-ebiMq7q24WBU1D6uhPK//2OTR1iRIyxjF5iVq/1a5I1SDMDyDu4Ts6fJaMnjrvD3MqnaiFkKQj+LKAgz5WIK3g==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/server-renderer/-/server-renderer-3.2.45.tgz}
@@ -3906,13 +3889,11 @@ packages:
       '@vue/compiler-ssr': registry.npmjs.org/@vue/compiler-ssr@3.2.45
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
       vue: registry.npmjs.org/vue@3.2.45
-    dev: false
 
   registry.npmjs.org/@vue/shared@3.2.45:
     resolution: {integrity: sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/shared/-/shared-3.2.45.tgz}
     name: '@vue/shared'
     version: 3.2.45
-    dev: false
 
   registry.npmjs.org/@webassemblyjs/ast@1.11.1:
     resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.1.tgz}
@@ -5786,7 +5767,6 @@ packages:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/csstype/-/csstype-2.6.21.tgz}
     name: csstype
     version: 2.6.21
-    dev: false
 
   registry.npmjs.org/current-script-polyfill@1.0.0:
     resolution: {integrity: sha512-qv8s+G47V6Hq+g2kRE5th+ASzzrL7b6l+tap1DHKK25ZQJv3yIFhH96XaQ7NGL+zRW3t/RDbweJf/dJDe5Z5KA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/current-script-polyfill/-/current-script-polyfill-1.0.0.tgz}
@@ -9104,7 +9084,6 @@ packages:
     name: local-pkg
     version: 0.4.3
     engines: {node: '>=14'}
-    dev: false
 
   registry.npmjs.org/locate-path@2.0.0:
     resolution: {integrity: sha512-NCI2kiDkyR7VeEKm27Kda/iQHyKJe1Bu0FlTbYp3CqJu+9IFe9bLyAjMxf5ZDDbEg+iMPzB5zYyUTSm8wVTKmA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/locate-path/-/locate-path-2.0.0.tgz}
@@ -9245,7 +9224,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': registry.npmjs.org/@jridgewell/sourcemap-codec@1.4.14
-    dev: false
 
   registry.npmjs.org/make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/make-dir/-/make-dir-2.1.0.tgz}
@@ -13684,7 +13662,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: false
 
   registry.npmjs.org/unplugin@1.3.1:
     resolution: {integrity: sha512-h4uUTIvFBQRxUKS2Wjys6ivoeofGhxzTe2sRWlooyjHXVttcVfV/JiavNd3d4+jty0SVV0dxGw9AkY9MwiaCEw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/unplugin/-/unplugin-1.3.1.tgz}
@@ -13695,7 +13672,6 @@ packages:
       chokidar: registry.npmjs.org/chokidar@3.5.3
       webpack-sources: registry.npmjs.org/webpack-sources@3.2.3
       webpack-virtual-modules: registry.npmjs.org/webpack-virtual-modules@0.5.0
-    dev: false
 
   registry.npmjs.org/upath@2.0.1:
     resolution: {integrity: sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/upath/-/upath-2.0.1.tgz}
@@ -13982,7 +13958,6 @@ packages:
       '@vue/runtime-dom': registry.npmjs.org/@vue/runtime-dom@3.2.45
       '@vue/server-renderer': registry.npmjs.org/@vue/server-renderer@3.2.45(vue@3.2.45)
       '@vue/shared': registry.npmjs.org/@vue/shared@3.2.45
-    dev: false
 
   registry.npmjs.org/wait-on@7.0.1(debug@4.3.4):
     resolution: {integrity: sha512-9AnJE9qTjRQOlTZIldAaf/da2eW0eSRSgcqq85mXQja/DW3MriHxkpODDSUEg+Gri/rKEcXUZHe+cevvYItaog==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/wait-on/-/wait-on-7.0.1.tgz}
@@ -14061,7 +14036,6 @@ packages:
     resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/webpack-virtual-modules/-/webpack-virtual-modules-0.5.0.tgz}
     name: webpack-virtual-modules
     version: 0.5.0
-    dev: false
 
   registry.npmjs.org/webpack@5.76.3:
     resolution: {integrity: sha512-18Qv7uGPU8b2vqGeEEObnfICyw2g39CHlDEK4I7NK13LOur1d0HGmGNKGT58Eluwddpn3oEejwvBPoP4M7/KSA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/webpack/-/webpack-5.76.3.tgz}
