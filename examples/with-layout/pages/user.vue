@@ -1,5 +1,3 @@
 <template>
-    <div>
-      users layout
-    </div>
-  </template>
+  <div>users layout</div>
+</template>

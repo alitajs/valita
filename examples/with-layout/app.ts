@@ -1,5 +1,11 @@
-import { NavBarProps, TitleListItem, NavBarListItem,TabBarListItem,TabBarProps } from 'valita';
-import Test from '@/components/Test.vue'
+import Test from '@/components/Test.vue';
+import {
+  NavBarListItem,
+  NavBarProps,
+  TabBarListItem,
+  TabBarProps,
+  TitleListItem,
+} from 'valita';
 const titleList: TitleListItem[] = [
   {
     pagePath: '/user',
@@ -14,15 +20,15 @@ const navList: NavBarListItem[] = [
   {
     pagePath: '/user',
     navBar: {
-      leftContent:Test
+      leftContent: Test,
     },
-  }
+  },
 ];
 const navBar: NavBarProps = {
   navList,
   fixed: true,
   mode: 'dark',
-  onLeftClick: (router:any) => {
+  onLeftClick: (router: any) => {
     router.goBack();
   },
 };
@@ -32,23 +38,23 @@ const tabList: TabBarListItem[] = [
     text: '首页',
     icon: 'home-o',
     selectedIcon: 'home-o',
-    title: '首页'
+    title: '首页',
   },
   {
     pagePath: '/user',
     text: '用户',
     icon: Test,
-    selectedIcon:Test,
+    selectedIcon: Test,
     title: '待办中心',
-    badge: '3'
+    badge: '3',
   },
-]
+];
 
 const tabBar: TabBarProps = {
   color: `#000000`,
   selectedColor: '#00A0FF',
   backgroungColor: '#Fff',
-  list: tabList
+  list: tabList,
 };
 export const mobileLayout = {
   theme: 'dark',
@@ -56,4 +62,4 @@ export const mobileLayout = {
   navBar,
   titleList,
   tabBar,
-}
+};
