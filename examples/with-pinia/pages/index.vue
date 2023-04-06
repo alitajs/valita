@@ -8,12 +8,12 @@
 </template>
 
 <script lang="ts" setup>
-const store = useCounterStore()
+const store = useCounterStore();
 
 const increment = () => {
-  store.increment()
-}
-const doubleValue = computed(() => store.doubleCount)
+  store.increment();
+};
+const doubleValue = computed(() => store.doubleCount);
 </script>
 
 <style lang="less" scoped>

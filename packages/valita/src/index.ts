@@ -1,2 +1,2 @@
-export * from 'vue';
 export * from 'umi';
+export * from 'vue';

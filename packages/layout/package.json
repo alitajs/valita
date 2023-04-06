@@ -1,8 +1,8 @@
 {
-  "name": "@alitajs/vue-utils",
+  "name": "@alitajs/vue-layout",
   "version": "0.0.2-alpha.0",
-  "description": "@alitajs/vue-utils",
-  "homepage": "https://github.com/alitajs/valita/tree/master/packages/utils#readme",
+  "description": "@alitajs/vue-layout",
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/layout#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
   "repository": {
     "type": "git",
@@ -19,16 +19,16 @@
     "dev": "vfather dev"
   },
   "dependencies": {
-    "@umijs/utils": "4.0.63",
-    "umi": "4.0.63"
+    "@alitajs/vue-utils": "workspace:*",
+    "vant": "4.0.11",
+    "vue": "3.2.45",
+    "vue-router": "4.1.6"
   },
   "peerDependencies": {
+    "unplugin-vue-components": "^0.24.1",
     "valita": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "authors": [
-    "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
-  ]
+  }
 }
