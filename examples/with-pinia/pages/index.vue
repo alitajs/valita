@@ -8,6 +8,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useCounterStore } from '@/stores/count';
+import { computed } from 'vue';
 const store = useCounterStore();
 
 const increment = () => {

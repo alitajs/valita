@@ -40,7 +40,7 @@ export default (api: IApi) => {
     api.writeTmpFile({
       path: join(DIR_NAME, 'types.d.ts'),
       noPluginDir: true,
-      content:`
+      content: `
       export interface TitleListItem {
         pagePath: string;
         title: string;
@@ -99,8 +99,8 @@ export default (api: IApi) => {
         navBar?: NavBarProps;
         documentTitle?: string;
         titleList?: TitleItems[];
-      }`
-    })
+      }`,
+    });
   });
   // 使用 api.addLayouts 用 examples/with-layout/.umi/plugin-layout/index.vue 包裹项目
   api.addLayouts(() => {
