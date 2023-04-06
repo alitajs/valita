@@ -172,20 +172,20 @@ const onChangeTab = (name) => {
 };
 </script>
 <style scoped lang="css">
-.valita-layout {
+.alita-page {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
-.valita-layout .content {
+.alita-page .alita-content {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
 
-.valita-layout .content.fixed_header_content {
+.alita-page .alita-content.fixed_header_content {
   padding-top: var(--van-nav-bar-height);
 }
-.valita-layout .content.fixed_footer_content {
+.alita-page .alita-content.fixed_footer_content {
   padding-bottom: var(--van-tabbar-height);
 }
 </style>
