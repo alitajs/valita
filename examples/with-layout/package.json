@@ -10,10 +10,10 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@alitajs/vue-layout": "workspace:*",
     "valita": "workspace:*",
     "vant": "4.0.11",
-    "vue": "3.2.45",
-    "@alitajs/vue-layout": "workspace:*"
+    "vue": "3.2.45"
   },
   "devDependencies": {
     "unplugin-vue-components": "^0.24.1"
