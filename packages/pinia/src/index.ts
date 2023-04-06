@@ -1,4 +1,4 @@
-import { withTmpPath } from '@alitajs/vue-utils';
+import { winPath, withTmpPath } from '@alitajs/vue-utils';
 import { dirname } from 'path';
 import { IApi } from 'valita';
 import { StoreUtils } from './storeUtils';
@@ -8,7 +8,7 @@ export function getAllStores(api: IApi) {
 }
 
 export default (api: IApi) => {
-  const pinia = dirname(require.resolve('pinia/package.json'));
+  const pinia = winPath(dirname(require.resolve('pinia/package.json')));
 
   api.modifyConfig((memo) => {
     memo.alias = {
@@ -41,18 +41,17 @@ ${stores.map((file: string) => {
     });
 
     // types.ts
-    api.writeTmpFile({
-      path: 'types.d.ts',
-      tpl: `
-`,
-      context: {},
-    });
+    // api.writeTmpFile({
+    //   path: 'types.d.ts',
+    //   tpl: `
+    //   `,
+    //   context: {},
+    // });
 
     // runtime.tsx
     api.writeTmpFile({
       path: 'runtime.tsx',
       content: `
-import React from 'react';
 import { createPinia } from '${pinia}';
 
 export function onMounted({ app }) {
