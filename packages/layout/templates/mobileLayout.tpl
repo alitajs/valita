@@ -1,9 +1,10 @@
 <template>
   <van-config-provider
-    class="valita-layout"
+    class="alita-page"
     :theme="layoutCfg?.theme || defaultTheme"
   >
     <van-nav-bar
+      class="alita-head"
       :fixed="layoutCfg?.navBar?.fixed !== false"
       v-if="
         curNavBar?.hideNavBar !== false &&
@@ -39,13 +40,14 @@
       </template>
     </van-nav-bar>
     <div
-      :class="`content ${
+      :class="`alita-content ${
         layoutCfg?.navBar?.fixed !== false ? 'fixed_header_content' : ''
       } ${layoutCfg?.tabBar?.fixed !== false ? 'fixed_footer_content' : ''}`"
     >
       <router-view></router-view>
     </div>
     <van-tabbar
+      class="alita-footer"
       v-if="tabActive"
       v-model="state.curPagePath"
       :fixed="layoutCfg?.tabBar?.fixed !== false"
@@ -92,65 +94,11 @@
 <script setup lang="ts">
 import { computed, reactive, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import { useAppData } from 'valita';
-export interface TabBarListItem {
-  pagePath: string;
-  text?: string;
-  iconPath?: string;
-  selectedIconPath?: string;
-  dot?: boolean;
-  badge?: number | string;
-  title?: string;
-  icon?: string;
-  selectedIcon?: string;
-  onPress?: (navigator: any, data?: TabBarListItem) => void | Promise<boolean>;
-  hideNavBar?: boolean;
-}
-export interface TabBarProps {
-  color?: string;
-  fixed?: boolean;
-  selectedColor?: string;
-  backgroundColor?: string;
-  list?: TabBarListItem[];
-  tabBeforeChange?: (
-    navigator: any,
-    name: number | string,
-  ) => void | Promise<boolean>;
-  tabChange?: (navigator: any, name: number | string) => void;
-}
-export interface _NavBarProps {
-  mode?: 'dark' | 'light';
-  icon?: object | string;
-  leftText?: string;
-  leftContent?: any;
-  rightContent?: any;
-  onLeftClick?: (navigator: any) => void;
-  hideNavBar?: boolean;
-  pageBackground?: string;
-  pageTitle?: string;
-}
-export interface NavBarListItem {
-  pagePath: string;
-  navBar?: _NavBarProps;
-}
-export interface NavBarProps extends _NavBarProps {
-  fixed?: boolean;
-  navList?: NavBarListItem[];
-}
-export interface TitleItems {
-  pagePath: string;
-  title?: string;
-}
-export interface MobileLayoutProps {
-  theme?: 'dark' | 'light';
-  tabBar?: TabBarProps;
-  navBar?: NavBarProps;
-  documentTitle?: string;
-  titleList?: TitleItems[];
-}
-const app = useAppData();
-const layoutCfg: MobileLayoutProps =
-  app?.pluginManager?.hooks?.mobileLayout?.[0];
+import { getPluginManager } from '../core/plugin';
+import { TabBarListItem } from './types.d';
+
+// mobile layout runtime config
+const layoutCfg = getPluginManager().applyPlugins({ key: 'mobileLayout',type: 'modify', initialValue: {} });
 const defaultTheme = 'light';
 const state = reactive({ curPagePath: location?.pathname });
 const tabActive = computed(() => {

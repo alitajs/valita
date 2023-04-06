@@ -1,5 +1,5 @@
 import Test from '@/components/Test.vue';
-import {
+import type {
   NavBarListItem,
   NavBarProps,
   TabBarListItem,
