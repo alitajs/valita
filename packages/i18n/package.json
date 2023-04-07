@@ -1,0 +1,36 @@
+{
+  "name": "@alitajs/vue-i18n",
+  "version": "0.0.2-alpha.0",
+  "description": "@alitajs/vue-i18n",
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/i18n#readme",
+  "bugs": "https://github.com/alitajs/valita/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alitajs/valita"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build",
+    "dev": "father dev"
+  },
+  "dependencies": {
+    "@alitajs/vue-utils": "workspace:*",
+    "unplugin-vue-components": "^0.24.1",
+    "valita": "workspace:*",
+    "vue": "3.2.47",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "4.1.6"
+  },
+  "peerDependencies": {
+    "unplugin-vue-components": "^0.24.1",
+    "valita": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
