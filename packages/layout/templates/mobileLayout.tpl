@@ -13,10 +13,10 @@
       :title="curNavBar?.title || layoutCfg?.documentTitle"
       :left-text="curNavBar?.leftText"
       :left-arrow="
-        curNavBar?.leftContent ||
+        !!(curNavBar?.leftContent ||
         curNavBar?.leftText ||
         curNavBar?.icon ||
-        curNavBar?.onLeftClick
+        curNavBar?.onLeftClick)
       "
       @click-left="
         () => {
