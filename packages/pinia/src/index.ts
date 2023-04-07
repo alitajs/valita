@@ -34,9 +34,11 @@ export default (api: IApi) => {
       path: 'index.ts',
       content: `
       export * from '${pinia}';
-${stores.map((file: string) => {
-        return `export * from '${file}';`;
-      }).join('\n')}
+${stores
+  .map((file: string) => {
+    return `export * from '${file}';`;
+  })
+  .join('\n')}
 `,
     });
 

@@ -1,3 +1,1 @@
-export default {
-  plugins: ['@alitajs/vue-layout'],
-};
+export default {};

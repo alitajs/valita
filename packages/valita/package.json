@@ -32,7 +32,10 @@
     "dev": "father dev"
   },
   "dependencies": {
+    "@alitajs/vue-layout": "workspace:*",
     "@alitajs/vue-pinia": "workspace:*",
+    "@alitajs/vue-request": "workspace:*",
+    "@alitajs/vue-utils": "workspace:*",
     "@umijs/preset-vue": "4.0.63",
     "@umijs/utils": "4.0.63",
     "umi": "4.0.63",

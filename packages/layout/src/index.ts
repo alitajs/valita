@@ -1,5 +1,6 @@
+import { getUserLibDir } from '@alitajs/vue-utils';
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { dirname, join } from 'path';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
 import VComponents from 'unplugin-vue-components/vite';
 import RComponents from 'unplugin-vue-components/webpack';
@@ -9,6 +10,16 @@ const layoutMap = {
   mobile: 'mobileLayout.tpl',
 };
 export default (api: IApi) => {
+  api.modifyConfig((memo) => {
+    const vant =
+      getUserLibDir({ library: 'vant', api }) ||
+      dirname(require.resolve('vant/package.json'));
+    memo.alias = {
+      ...memo.alias,
+      vant,
+    };
+    return memo;
+  });
   api.addRuntimePluginKey(() => ['mobileLayout']);
   api.modifyViteConfig((config) => {
     config.plugins?.push(
