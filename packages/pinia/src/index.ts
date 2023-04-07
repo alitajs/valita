@@ -35,8 +35,8 @@ export default (api: IApi) => {
       content: `
       export * from '${pinia}';
 ${stores.map((file: string) => {
-  return `export * from '${file}';`;
-})}
+        return `export * from '${file}';`;
+      }).join('\n')}
 `,
     });
 
