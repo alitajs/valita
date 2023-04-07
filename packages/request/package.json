@@ -1,8 +1,8 @@
 {
-  "name": "@alitajs/vue-pinia",
+  "name": "@alitajs/vue-request",
   "version": "0.0.2-alpha.0",
-  "description": "@alitajs/vue-pinia",
-  "homepage": "https://github.com/alitajs/valita/tree/master/packages/pinia#readme",
+  "description": "@alitajs/vue-request",
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/request#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
   "repository": {
     "type": "git",
@@ -19,8 +19,9 @@
     "dev": "father dev"
   },
   "dependencies": {
+    "@alita/request": "^3.1.1",
     "@alitajs/vue-utils": "workspace:*",
-    "pinia": "^2.0.33"
+    "ahooks-vue": "^0.15.0"
   },
   "peerDependencies": {
     "valita": "workspace:*"

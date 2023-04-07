@@ -1,5 +1,5 @@
 {
-  "name": "@example/with-layout",
+  "name": "@example/boilerplate",
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=1 valita build",
@@ -10,11 +10,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "valita": "workspace:*",
-    "vant": "4.0.11",
-    "vue": "3.2.45"
-  },
-  "devDependencies": {
-    "unplugin-vue-components": "^0.24.1"
+    "@vueuse/core": "^9.13.0",
+    "valita": "workspace:*"
   }
 }
