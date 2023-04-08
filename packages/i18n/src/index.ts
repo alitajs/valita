@@ -1,7 +1,7 @@
 import { IApi } from "valita";
 import { LangUtils } from "./langUtils";
 import { dirname, join } from "path";
-import { winPath, withTmpPath } from "@alitajs/vue-utils";
+import { winPath } from "@alitajs/vue-utils";
 const DIR_NAME = 'plugin-i18n';
 
 const getAllLanguages = (api: IApi) => {
@@ -63,15 +63,16 @@ export function onMounted({ app }) {
 `,
         });
         api.writeTmpFile({
-            path: join(DIR_NAME, 'type.d.ts'),
+            path: join(DIR_NAME, 'types.d.ts'),
             noPluginDir: true,
             content: `export { useI18n } from '${winPath(
                 dirname(require.resolve('vue-i18n')),
             )}';
+export {setLocale} from './index';
             `,
         });
     })
     api.addRuntimePlugin(() => {
-        return [withTmpPath({ api, path: join(DIR_NAME, 'runtime.ts'), noPluginDir: true })];
+        return [`${api.paths.absTmpPath}/${DIR_NAME}/runtime.ts`];
     });
 }
