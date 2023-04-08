@@ -1,7 +1,8 @@
 import { IApi } from "valita";
 import { LangUtils } from "./langUtils";
-import { dirname } from "path";
+import { dirname, join } from "path";
 import { winPath, withTmpPath } from "@alitajs/vue-utils";
+const DIR_NAME = 'plugin-i18n';
 
 const getAllLanguages = (api: IApi) => {
     return new LangUtils(api).getAllLang();
@@ -10,27 +11,31 @@ const getAllLanguages = (api: IApi) => {
 const getFileName = (file: string) => {
     return file.substring(file.lastIndexOf('/') + 1, file.lastIndexOf('.'));
 }
+
 const getEffectiveKeyName = (file: string) => {
     return getFileName(file).replace('-', '');
 }
 
 export default (api: IApi) => {
     const i18n = winPath(dirname(require.resolve('vue-i18n/package.json')));
+    const vueuse = winPath(dirname(require.resolve('@vueuse/core')))
     const languages = getAllLanguages(api);
     api.onGenerateFiles((args) => {
         api.writeTmpFile({
-            path: 'index.ts',
+            noPluginDir: true,
+            path: join(DIR_NAME, 'index.ts'),
             content: `
 export * from '${i18n}';
 export { useI18n } from '${i18n}';
 import { createI18n } from '${i18n}';
+import { useLocalStorage } from '${vueuse}';
 ${languages.map((file: string) => {
                 return `import ${getEffectiveKeyName(file)} from '${file}';`;
             }).join('\n')}
 export const i18n = createI18n({
     globalInjection: true,
     allowComposition: true,
-    locale: 'en-US',
+    locale: useLocalStorage('locale', 'en-US').value,
     messages:{
         ${languages.map((file: string) => {
                 return `'${getFileName(file)}':${getEffectiveKeyName(file)}`;
@@ -38,10 +43,18 @@ export const i18n = createI18n({
                 }
     }
 })
+export const setLocale = (lang:string) => {
+    if(i18n.global.locale !== lang)
+    {
+        useLocalStorage('locale', 'en-US').value = lang;
+        i18n.global.locale = lang;
+    }
+}
 `
         })
         api.writeTmpFile({
-            path: 'runtime.tsx',
+            path: join(DIR_NAME, 'runtime.ts'),
+            noPluginDir: true,
             content: `
 import { i18n } from './index';
 export function onMounted({ app }) {
@@ -49,8 +62,16 @@ export function onMounted({ app }) {
 }
 `,
         });
+        api.writeTmpFile({
+            path: join(DIR_NAME, 'type.d.ts'),
+            noPluginDir: true,
+            content: `export { useI18n } from '${winPath(
+                dirname(require.resolve('vue-i18n')),
+            )}';
+            `,
+        });
     })
     api.addRuntimePlugin(() => {
-        return [withTmpPath({ api, path: 'runtime.tsx' })];
+        return [withTmpPath({ api, path: join(DIR_NAME, 'runtime.ts'), noPluginDir: true })];
     });
 }

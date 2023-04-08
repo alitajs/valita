@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@alitajs/vue-i18n": "workspace:*",
-    "valita": "workspace:*",
-    "vant": "^4.1.2"
+    "valita": "workspace:*"
   },
   "devDependencies": {
     "unplugin-vue-components": "^0.24.1"
