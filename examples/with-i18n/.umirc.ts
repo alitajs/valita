@@ -1,3 +1,1 @@
-export default {
-  plugins: ['@alitajs/vue-i18n'],
-};
+export default {};
