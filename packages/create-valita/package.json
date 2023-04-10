@@ -1,6 +1,6 @@
 {
   "name": "create-valita",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "create-valita",
   "homepage": "https://github.com/alitajs/valita#readme",
   "bugs": {
@@ -27,5 +27,5 @@
   "dependencies": {
     "@umijs/utils": "4.0.63"
   },
-  "gitHead": "dcac8701d58d3d026efc8e117b1ffde8848c48cb"
+  "gitHead": "c7d4cdfa912d9ed615f40befec22dcc1e196c829"
 }

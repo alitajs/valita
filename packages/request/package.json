@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-request",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "@alitajs/vue-request",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/request#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@alita/request": "^3.1.1",
-    "@alitajs/vue-utils": "^0.0.4",
+    "@alitajs/vue-utils": "^0.0.5",
     "ahooks-vue": "^0.15.0"
   },
   "peerDependencies": {
@@ -32,5 +32,5 @@
   "authors": [
     "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
   ],
-  "gitHead": "dcac8701d58d3d026efc8e117b1ffde8848c48cb"
+  "gitHead": "c7d4cdfa912d9ed615f40befec22dcc1e196c829"
 }
