@@ -1,4 +1,4 @@
 export default {
-    lang: 'English',
-    test: 'This is Test Text',
-}
+  lang: 'English',
+  test: 'This is Test Text',
+};
