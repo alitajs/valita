@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-pinia",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2",
   "description": "@alitajs/vue-pinia",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/pinia#readme",
   "bugs": "https://github.com/alitajs/valita/issues",

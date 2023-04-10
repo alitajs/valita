@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-request",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2",
   "description": "@alitajs/vue-request",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/request#readme",
   "bugs": "https://github.com/alitajs/valita/issues",

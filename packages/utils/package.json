@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-utils",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2",
   "description": "@alitajs/vue-utils",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/utils#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
