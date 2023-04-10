@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-request",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "@alitajs/vue-request",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/request#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@alita/request": "^3.1.1",
-    "@alitajs/vue-utils": "^0.0.3",
+    "@alitajs/vue-utils": "^0.0.4",
     "ahooks-vue": "^0.15.0"
   },
   "peerDependencies": {
