@@ -19,10 +19,9 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "workspace:*",
+    "@alitajs/vue-utils": "^0.0.2",
     "@vueuse/core": "^9.13.0",
     "unplugin-vue-components": "^0.24.1",
-    "valita": "workspace:*",
     "vue": "3.2.47",
     "vue-i18n": "^9.2.2",
     "vue-router": "4.1.6"
@@ -33,5 +32,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "97485e8513dc4b4eabecc55ea54276b3488756a7"
 }

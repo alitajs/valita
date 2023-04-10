@@ -19,7 +19,7 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "workspace:*",
+    "@alitajs/vue-utils": "^0.0.2",
     "pinia": "^2.0.33"
   },
   "peerDependencies": {
@@ -30,5 +30,6 @@
   },
   "authors": [
     "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
-  ]
+  ],
+  "gitHead": "97485e8513dc4b4eabecc55ea54276b3488756a7"
 }

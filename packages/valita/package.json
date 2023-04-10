@@ -33,15 +33,15 @@
   },
   "dependencies": {
     "@alita/autoimport": "^3.0.1",
-    "@alitajs/vue-i18n": "workspace:*",
-    "@alitajs/vue-layout": "workspace:*",
-    "@alitajs/vue-pinia": "workspace:*",
-    "@alitajs/vue-request": "workspace:*",
-    "@alitajs/vue-utils": "workspace:*",
+    "@alitajs/vue-i18n": "^0.0.2",
+    "@alitajs/vue-layout": "^0.0.2",
+    "@alitajs/vue-pinia": "^0.0.2",
+    "@alitajs/vue-request": "^0.0.2",
+    "@alitajs/vue-utils": "^0.0.2",
     "@umijs/preset-vue": "4.0.63",
     "@umijs/utils": "4.0.63",
     "umi": "4.0.63",
     "vue": "3.2.45"
   },
-  "gitHead": "b4fea14422353614d8676e5b116ad35b187edba1"
+  "gitHead": "97485e8513dc4b4eabecc55ea54276b3488756a7"
 }

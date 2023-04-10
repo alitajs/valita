@@ -26,5 +26,6 @@
   },
   "dependencies": {
     "@umijs/utils": "4.0.63"
-  }
+  },
+  "gitHead": "97485e8513dc4b4eabecc55ea54276b3488756a7"
 }
