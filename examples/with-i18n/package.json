@@ -1,0 +1,19 @@
+{
+  "name": "@example/with-i18n",
+  "private": true,
+  "scripts": {
+    "analyze": "ANALYZE=1 valita build",
+    "build": "valita build",
+    "dev": "valita dev",
+    "preview": "valita preview",
+    "setup": "valita setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@alitajs/vue-i18n": "workspace:*",
+    "valita": "workspace:*"
+  },
+  "devDependencies": {
+    "unplugin-vue-components": "^0.24.1"
+  }
+}
