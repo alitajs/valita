@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-utils",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.3",
   "description": "@alitajs/vue-utils",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/utils#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -31,5 +31,6 @@
   },
   "authors": [
     "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
-  ]
+  ],
+  "gitHead": "dcac8701d58d3d026efc8e117b1ffde8848c48cb"
 }

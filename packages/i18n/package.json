@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-i18n",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.3",
   "description": "@alitajs/vue-i18n",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/i18n#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -19,10 +19,9 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "workspace:*",
+    "@alitajs/vue-utils": "^0.0.3",
     "@vueuse/core": "^9.13.0",
     "unplugin-vue-components": "^0.24.1",
-    "valita": "workspace:*",
     "vue": "3.2.47",
     "vue-i18n": "^9.2.2",
     "vue-router": "4.1.6"
@@ -33,5 +32,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "dcac8701d58d3d026efc8e117b1ffde8848c48cb"
 }

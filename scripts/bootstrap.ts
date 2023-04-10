@@ -86,6 +86,12 @@ import { setExcludeFolder } from './.internal/utils';
         'utf-8',
       );
 
+      // LICENSE.md
+      await fs.copyFile(
+        path.join(root, 'LICENSE.md'),
+        path.join(pkgDir, 'README.md'),
+      );
+
       // tsconfig.json
       await fs.writeFile(
         path.join(pkgDir, 'tsconfig.json'),

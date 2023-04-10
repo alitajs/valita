@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-layout",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.3",
   "description": "@alitajs/vue-layout",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/layout#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -19,7 +19,7 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "workspace:*",
+    "@alitajs/vue-utils": "^0.0.3",
     "unplugin-vue-components": "^0.24.1",
     "vant": "4.0.11",
     "vue": "3.2.45",
@@ -30,5 +30,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "dcac8701d58d3d026efc8e117b1ffde8848c48cb"
 }
