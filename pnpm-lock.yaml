@@ -130,7 +130,7 @@ importers:
   packages/i18n:
     dependencies:
       '@alitajs/vue-utils':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../utils
       '@vueuse/core':
         specifier: ^9.13.0
@@ -138,9 +138,6 @@ importers:
       unplugin-vue-components:
         specifier: ^0.24.1
         version: 0.24.1(vue@3.2.47)
-      valita:
-        specifier: workspace:*
-        version: link:../valita
       vue:
         specifier: 3.2.47
         version: 3.2.47
@@ -154,7 +151,7 @@ importers:
   packages/layout:
     dependencies:
       '@alitajs/vue-utils':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../utils
       unplugin-vue-components:
         specifier: ^0.24.1
@@ -172,7 +169,7 @@ importers:
   packages/pinia:
     dependencies:
       '@alitajs/vue-utils':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../utils
       pinia:
         specifier: ^2.0.33
@@ -184,7 +181,7 @@ importers:
         specifier: ^3.1.1
         version: registry.npmjs.org/@alita/request@3.1.1
       '@alitajs/vue-utils':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../utils
       ahooks-vue:
         specifier: ^0.15.0
@@ -208,19 +205,19 @@ importers:
         specifier: ^3.0.1
         version: registry.npmjs.org/@alita/autoimport@3.0.1
       '@alitajs/vue-i18n':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../i18n
       '@alitajs/vue-layout':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../layout
       '@alitajs/vue-pinia':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../pinia
       '@alitajs/vue-request':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../request
       '@alitajs/vue-utils':
-        specifier: workspace:*
+        specifier: ^0.0.3
         version: link:../utils
       '@umijs/preset-vue':
         specifier: 4.0.63
