@@ -19,6 +19,7 @@
     "dev": "vfather dev"
   },
   "dependencies": {
+    "@umijs/bundler-utils": "^4.0.64",
     "@umijs/utils": "4.0.63",
     "umi": "4.0.63"
   },

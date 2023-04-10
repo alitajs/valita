@@ -5,3 +5,6 @@ lib
 .umi
 .umi-production
 .umi-test
+autoImport.d.ts
+autoVueTemplate.d.ts
+components.d.ts
