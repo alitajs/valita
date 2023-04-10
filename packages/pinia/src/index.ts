@@ -1,8 +1,8 @@
-import { winPath, withTmpPath } from '@alitajs/vue-utils';
+import { getExportProps, winPath, withTmpPath } from '@alitajs/vue-utils';
+import { readFileSync } from 'fs';
 import { dirname } from 'path';
 import { IApi } from 'valita';
 import { StoreUtils } from './storeUtils';
-
 export function getAllStores(api: IApi) {
   return new StoreUtils(api).getAllStores();
 }
@@ -23,6 +23,35 @@ export default (api: IApi) => {
       stores,
     };
     return memo;
+  });
+  // @ts-ignore
+  api.addLowImportLibs(() => {
+    const stores = getAllStores(api);
+    const p = stores.map((f) => {
+      const fi = readFileSync(f, 'utf-8');
+      const props = getExportProps(fi);
+      return { importFrom: f, members: props };
+    });
+    return [
+      ...p,
+      {
+        importFrom: 'pinia',
+        members: [
+          'acceptHMRUpdate',
+          'defineStore',
+          'getActivePinia',
+          'mapActions',
+          'mapGetters',
+          'mapState',
+          'mapStores',
+          'mapWritableState',
+          'setActivePinia',
+          'setMapStoreSuffix',
+          'skipHydrate',
+          'storeToRefs',
+        ],
+      },
+    ];
   });
   api.onGenerateFiles((args) => {
     const stores = args.isFirstTime
