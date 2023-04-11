@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@alita/autoimport": "^3.0.1",
+    "@alitajs/vue-keepalive": "^0.0.5",
     "@alitajs/vue-i18n": "^0.0.5",
     "@alitajs/vue-layout": "^0.0.5",
     "@alitajs/vue-pinia": "^0.0.5",

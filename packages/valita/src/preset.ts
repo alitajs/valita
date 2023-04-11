@@ -10,6 +10,7 @@ export default () => {
       require.resolve('@alitajs/vue-request'),
       require.resolve('@alitajs/vue-layout'),
       require.resolve('@alitajs/vue-i18n'),
+      require.resolve('@alitajs/vue-keepalive'),
     ],
   };
 };

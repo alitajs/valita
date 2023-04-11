@@ -1,0 +1,30 @@
+{
+  "name": "@alitajs/vue-keepalive",
+  "version": "0.0.5",
+  "description": "@alitajs/vue-keepalive",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build",
+    "dev": "vfather dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alitajs/valita"
+  },
+  "authors": [
+    "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
+  ],
+  "license": "MIT",
+  "bugs": "https://github.com/alitajs/valita/issues",
+  "peerDependencies": {
+    "valita": "workspace:*"
+  },
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/keepalive#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
