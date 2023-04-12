@@ -200,9 +200,9 @@ width: 100%;
 height: 100%;
 
 /* stylelint-disable */
-margin: 0 !important;
+margin: 0;
 
-padding: 0 !important;
+padding: 0;
 overflow-y: auto;
 touch-action: pan-y;
 
