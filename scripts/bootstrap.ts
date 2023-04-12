@@ -88,8 +88,8 @@ import { setExcludeFolder } from './.internal/utils';
 
       // LICENSE.md
       await fs.copyFile(
-        path.join(root, 'LICENSE.md'),
-        path.join(pkgDir, 'README.md'),
+        path.join(root, 'LICENSE'),
+        path.join(pkgDir, 'LICENSE'),
       );
 
       // tsconfig.json
