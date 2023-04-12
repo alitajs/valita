@@ -1,11 +1,8 @@
 <template>
   <div :style="{ height: '100px' }" />
-  <div>
-    users layout
-    {{ nameValue }}
-    <button @click="nameValue++">add</button>
-    <router-view></router-view>
-  </div>
+  <div>this is name pages</div>
+  {{ nameValue }}
+  <button @click="nameValue++">add</button>
 </template>
 
 <script lang="ts" setup>

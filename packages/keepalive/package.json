@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "father build",
-    "dev": "vfather dev"
+    "dev": "vfather dev",
+    "watch": "father build -w"
   },
   "repository": {
     "type": "git",
