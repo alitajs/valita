@@ -11,8 +11,11 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useAppData } from "valita";
 
 const hello = ref<string>("hello vue");
+const app = useAppData();
+console.log(app);
 </script>
 <style lang="less" scoped>
 div {

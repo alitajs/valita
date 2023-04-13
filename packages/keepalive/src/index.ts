@@ -16,6 +16,26 @@ export default (api: IApi) => {
     enableBy: api.EnableBy.config,
   })
 
+
+  api.modifyRoutes((memo) => {
+    const newMemo = {} as any;
+    Object.entries(memo).forEach(([key, obj]) => {
+      if (obj.__content) {
+        newMemo[key] = {
+          ...obj, name: obj.path, __content: `
+    <script lang="ts">export default {name: "${obj.path}"}</script>\n
+    ${obj.__content}`
+        };
+      } else {
+        newMemo[key] = obj;
+      }
+    });
+    console.log(newMemo);
+
+    return newMemo;
+  })
+
+
   const configStringify = (config: (string | RegExp)[]) => {
     return config.map((item) => {
       if (item instanceof RegExp) {
