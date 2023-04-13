@@ -1,21 +1,27 @@
-MIT License
+# @alitajs/vue-keepalive
 
-Copyright (c) [2023] [congxiaochen]
+* 类型：`(string | RegExp)[]`
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+配置需要状态保持的路由。
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+```ts
+import { defineConfig } from 'valita';
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+export default defineConfig({
+  keepalive: ['/list'],
+});
+```
+
+> 注意，keepalive 的配置项，支持正则表达式。但是所有的路由正则匹配应该是全小写的，比如不管你的路由是 `home`、`Home` 还是 `hoMe` ，只有设置 `keepalive:[/home/]` 才有效。而字符串的配置方式就刚好相反，如果你的路由是`home`，你配置 `home`、`Home` 还是 `hoMe` 都有效。
+
+在需要使用  `<router-view></router-view>` 都需要使用 `<KeepAliveLayout>`  代替
+
+```diff
+<template>
+-   <router-view></router-view>
++   <KeepAliveLayout></KeepAliveLayout>
+</template>
++ <script lang="ts" setup>
++ import KeepAliveLayout from '@@/plugin-keepalive/layout.vue';
++ </script>
+```
