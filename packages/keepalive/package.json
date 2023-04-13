@@ -2,6 +2,13 @@
   "name": "@alitajs/vue-keepalive",
   "version": "0.0.5",
   "description": "@alitajs/vue-keepalive",
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/keepalive#readme",
+  "bugs": "https://github.com/alitajs/valita/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alitajs/valita"
+  },
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -12,20 +19,13 @@
     "dev": "vfather dev",
     "watch": "father build -w"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alitajs/valita"
-  },
-  "authors": [
-    "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
-  ],
-  "license": "MIT",
-  "bugs": "https://github.com/alitajs/valita/issues",
   "peerDependencies": {
     "valita": "workspace:*"
   },
-  "homepage": "https://github.com/alitajs/valita/tree/master/packages/keepalive#readme",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "authors": [
+    "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
+  ]
 }

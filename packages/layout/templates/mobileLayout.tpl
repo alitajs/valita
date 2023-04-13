@@ -44,7 +44,12 @@
         layoutCfg?.navBar?.fixed !== false ? 'fixed_header_content' : ''
       } ${layoutCfg?.tabBar?.fixed !== false ? 'fixed_footer_content' : ''}`"
     >
-      <router-view></router-view>
+{{#hasKeepAlive}}
+<KeepAliveLayout></KeepAliveLayout>
+{{/hasKeepAlive}}
+{{#!hasKeepAlive}}
+<router-view></router-view>
+{{/!hasKeepAlive}}
     </div>
     <van-tabbar
       class="alita-footer"
@@ -92,10 +97,15 @@
   </van-config-provider>
 </template>
 <script setup lang="ts">
+
+
 import { computed, reactive, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { getPluginManager } from '../core/plugin';
 import { TabBarListItem } from './types.d';
+{{#hasKeepAlive}}
+import KeepAliveLayout from '@@/plugin-keepalive/layout.vue';
+{{/hasKeepAlive}}
 
 // mobile layout runtime config
 const layoutCfg = getPluginManager().applyPlugins({ key: 'mobileLayout',type: 'modify', initialValue: {} });

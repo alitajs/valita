@@ -1,3 +1,3 @@
 export default {
-  keepalive: ['tab', 'name', 'users'],
+  keepalive: [/name/, /users/],
 };

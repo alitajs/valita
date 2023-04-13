@@ -1,4 +1,4 @@
-import { getUserLibDir } from '@alitajs/vue-utils';
+import { getUserLibDir, Mustache } from '@alitajs/vue-utils';
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
@@ -46,7 +46,9 @@ export default (api: IApi) => {
     api.writeTmpFile({
       path: join(DIR_NAME, 'layout.vue'),
       noPluginDir: true,
-      content: layoutTpl,
+      content: Mustache.render(layoutTpl, {
+        hasKeepAlive: !!api.config.keepalive,
+      }),
     });
     api.writeTmpFile({
       path: join(DIR_NAME, 'types.d.ts'),

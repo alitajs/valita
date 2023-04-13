@@ -10,11 +10,11 @@
 </template>
 <script lang="ts">
 export default {
-  name: "users",
+  name: 'users',
 };
 </script>
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 const index = ref<number>(0);
 const addIndex = () => {
   index.value = index.value += 1;
