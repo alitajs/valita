@@ -1,16 +1,26 @@
-export default () => {
+import { IApi } from 'umi';
+
+export default (api: IApi) => {
+  const corePlugins = [
+    require.resolve('@alita/autoimport'),
+    require.resolve('./plugins/apptype'),
+    require.resolve('./plugins/vAlias'),
+    require.resolve('./plugins/vAppData'),
+    require.resolve('./plugins/vChecker'),
+    require.resolve('./plugins/vConfig'),
+    require.resolve('@alitajs/vue-pinia'),
+    require.resolve('@alitajs/vue-request'),
+    require.resolve('@alitajs/vue-keepalive'),
+    require.resolve('@alitajs/vue-i18n'),
+  ];
+
+  if (api.userConfig.appType === 'h5') {
+    corePlugins.push(require.resolve('@alitajs/vue-vant-layout'));
+  }
+  if (api.userConfig.appType === 'pc') {
+    corePlugins.push(require.resolve('@alitajs/vue-antd-layout'));
+  }
   return {
-    plugins: [
-      require.resolve('@alita/autoimport'),
-      require.resolve('./plugins/vAlias'),
-      require.resolve('./plugins/vAppData'),
-      require.resolve('./plugins/vChecker'),
-      require.resolve('./plugins/vConfig'),
-      require.resolve('@alitajs/vue-pinia'),
-      require.resolve('@alitajs/vue-request'),
-      require.resolve('@alitajs/vue-keepalive'),
-      require.resolve('@alitajs/vue-layout'),
-      require.resolve('@alitajs/vue-i18n'),
-    ],
+    plugins: corePlugins.filter(Boolean),
   };
 };
