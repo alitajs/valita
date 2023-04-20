@@ -32,6 +32,12 @@
         />
         <template v-else>{{ curNavBar?.leftContent }}</template>
       </template>
+      <template #left v-else>
+        <van-icon
+          name="arrow-left"
+          :color="curNavBar.mode === 'dark' ? '#fff' : 'inherit'"
+        />
+      </template>
       <template #right v-if="curNavBar?.rightContent">
         <curNavBar.rightContent
           v-if="typeof curNavBar?.rightContent === 'object'"
@@ -47,9 +53,9 @@
 {{#hasKeepAlive}}
 <KeepAliveLayout></KeepAliveLayout>
 {{/hasKeepAlive}}
-{{#!hasKeepAlive}}
+{{^hasKeepAlive}}
 <router-view></router-view>
-{{/!hasKeepAlive}}
+{{/hasKeepAlive}}
     </div>
     <van-tabbar
       class="alita-footer"
@@ -99,10 +105,12 @@
 <script setup lang="ts">
 
 
-import { computed, reactive, watch } from 'vue';
+import { computed, reactive, watch, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { getPluginManager } from '../core/plugin';
 import { TabBarListItem } from './types.d';
+import {getPageNavBar,layoutEmitter} from "./layoutState";
+import { changeNavBarConfig } from "./utils";
 {{#hasKeepAlive}}
 import KeepAliveLayout from '@@/plugin-keepalive/layout.vue';
 {{/hasKeepAlive}}
@@ -111,14 +119,21 @@ import KeepAliveLayout from '@@/plugin-keepalive/layout.vue';
 const layoutCfg = getPluginManager().applyPlugins({ key: 'mobileLayout',type: 'modify', initialValue: {} });
 const defaultTheme = 'light';
 const state = reactive({ curPagePath: location?.pathname });
+const pageNavBar = ref(layoutCfg?.navBar?.navList);
 const tabActive = computed(() => {
   return layoutCfg?.tabBar?.list?.filter((item) => {
     return item?.pagePath === state?.curPagePath;
   })?.[0];
 });
+
+layoutEmitter?.useSubscription?.((e) => {
+    pageNavBar.value = getPageNavBar();
+  });
+
 let curNavBar = computed(() => {
   const curPath = location?.pathname;
-  const navBarActive = layoutCfg?.navBar?.navList?.filter((item) => {
+  const mergedNavList = changeNavBarConfig(layoutCfg?.navBar, pageNavBar.value);
+  const navBarActive = mergedNavList?.navList.filter((item) => {
     return item?.pagePath?.trim() === state?.curPagePath?.trim();
   })?.[0];
   if (navBarActive?.navBar?.hideNavBar) {
@@ -131,8 +146,8 @@ let curNavBar = computed(() => {
     mode: layoutCfg?.theme || defaultTheme,
     ...(navBarActive?.navBar || {}),
     title:
-      titleListActive?.title ||
       navBarActive?.navBar?.pageTitle ||
+      titleListActive?.title ||
       tabActive?.value?.title,
     pagePath:
       titleListActive?.pagePath ||
@@ -173,6 +188,7 @@ watch(
   () => router.currentRoute.value.path,
   (toPath) => {
     state.curPagePath = toPath;
+    pageNavBar.value = getPageNavBar();
   },
   { immediate: true, deep: true },
 );

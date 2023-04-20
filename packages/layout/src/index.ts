@@ -8,6 +8,8 @@ import { IApi } from 'valita';
 const DIR_NAME = 'plugin-layout';
 const layoutMap = {
   mobile: 'mobileLayout.tpl',
+  state: 'layoutState.tpl',
+  utils: 'utils.tpl',
 };
 export default (api: IApi) => {
   api.modifyConfig((memo) => {
@@ -31,6 +33,7 @@ export default (api: IApi) => {
   });
   api.modifyWebpackConfig((config) => {
     config.plugins?.push(
+      // @ts-ignore
       RComponents({
         resolvers: [VantResolver()],
       }),
@@ -43,6 +46,14 @@ export default (api: IApi) => {
       join(__dirname, '..', 'templates', layoutMap?.mobile),
       'utf-8',
     );
+    const layoutStateTpl = readFileSync(
+      join(__dirname, '..', 'templates', layoutMap?.state),
+      'utf-8',
+    );
+    const utilsTpl = readFileSync(
+      join(__dirname, '..', 'templates', layoutMap?.utils),
+      'utf-8',
+    );
     api.writeTmpFile({
       path: join(DIR_NAME, 'layout.vue'),
       noPluginDir: true,
@@ -50,6 +61,26 @@ export default (api: IApi) => {
         hasKeepAlive: !!api.config.keepalive,
       }),
     });
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'layoutState.ts'),
+      noPluginDir: true,
+      content: Mustache.render(layoutStateTpl, {}),
+    });
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'utils.ts'),
+      noPluginDir: true,
+      content: Mustache.render(utilsTpl, {}),
+    });
+
+    // index.ts for layout
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'index.ts'),
+      noPluginDir: true,
+      content: `
+      export { getPageNavBar, setPageNavBar, layoutEmitter } from './layoutState';
+      `,
+    });
+
     api.writeTmpFile({
       path: join(DIR_NAME, 'types.d.ts'),
       noPluginDir: true,
