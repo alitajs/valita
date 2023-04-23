@@ -13,12 +13,10 @@ export default (api: IApi) => {
     require.resolve('@alitajs/vue-keepalive'),
     require.resolve('@alitajs/vue-i18n'),
   ];
-
-  if (api.userConfig.appType === 'h5') {
-    corePlugins.push(require.resolve('@alitajs/vue-vant-layout'));
-  }
   if (api.userConfig.appType === 'pc') {
     corePlugins.push(require.resolve('@alitajs/vue-antd-layout'));
+  } else {
+    corePlugins.push(require.resolve('@alitajs/vue-vant-layout'));
   }
   return {
     plugins: corePlugins.filter(Boolean),
