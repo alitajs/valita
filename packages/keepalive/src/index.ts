@@ -52,7 +52,7 @@ export default (api: IApi) => {
       path: join(DIR_NAME, 'index.ts'),
       noPluginDir: true,
       content: `
-export { dropByCacheKey } from './emitter.ts';
+export { dropByCacheKey } from './emitter';
       `
     });
     // TODO: export KeepALiveLayout
