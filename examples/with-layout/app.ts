@@ -15,6 +15,14 @@ const titleList: TitleListItem[] = [
     pagePath: '/users/foo',
     title: '用户的foo',
   },
+  {
+    pagePath: '/name',
+    title: 'namePage',
+  },
+  {
+    pagePath: '/age',
+    title: 'agePage',
+  },
 ];
 const navList: NavBarListItem[] = [
   {
@@ -23,11 +31,19 @@ const navList: NavBarListItem[] = [
       leftContent: Test,
     },
   },
+  {
+    pagePath: '/name',
+    navBar: {},
+  },
+  {
+    pagePath: '/age',
+    navBar: {},
+  },
 ];
 const navBar: NavBarProps = {
   navList,
   fixed: true,
-  mode: 'dark',
+  mode: 'light',
   onLeftClick: (router: any) => {
     router.goBack();
   },
