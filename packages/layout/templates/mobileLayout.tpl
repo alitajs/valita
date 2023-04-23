@@ -109,7 +109,7 @@ import { computed, reactive, watch, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { getPluginManager } from '../core/plugin';
 import { TabBarListItem } from './types.d';
-import {getPageNavBar,layoutEmitter} from "./layoutState";
+import { getPageNavBar, layoutEmitter } from "./layoutState";
 import { changeNavBarConfig } from "./utils";
 {{#hasKeepAlive}}
 import KeepAliveLayout from '@@/plugin-keepalive/layout.vue';
