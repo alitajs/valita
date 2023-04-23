@@ -31,7 +31,7 @@ const navList: NavBarListItem[] = [
     leftContent: Test,
   },
   {
-    pagePath: '/name/name',
+    pagePath: '/name',
     navBar: {
       leftContent: Test,
     },
