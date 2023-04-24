@@ -2,7 +2,8 @@ import { IApi } from 'umi';
 
 export default (api: IApi) => {
   const corePlugins = [
-    require.resolve('@alita/autoimport'),
+    // require.resolve('@alita/autoimport'),
+    require.resolve('./plugins/autoimport'),
     require.resolve('./plugins/apptype'),
     require.resolve('./plugins/vAlias'),
     require.resolve('./plugins/vAppData'),

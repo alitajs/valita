@@ -1,7 +1,7 @@
+import { Mustache } from '@umijs/utils';
+import { readFileSync } from 'fs';
 import { join } from 'path';
 import { IApi } from 'valita';
-import { readFileSync } from 'fs';
-import { Mustache } from '@umijs/utils';
 
 const DIR_NAME = 'plugin-keepalive';
 type KeepAliveType = (string | RegExp)[];
@@ -29,10 +29,12 @@ export default (api: IApi) => {
 
   api.onGenerateFiles(() => {
     const keepaliveTpl = readFileSync(
-      join(__dirname, '..', 'templates', 'keepaliveLayout.tpl'), 'utf-8',
+      join(__dirname, '..', 'templates', 'keepaliveLayout.tpl'),
+      'utf-8',
     );
     const emitterTpl = readFileSync(
-      join(__dirname, '..', 'templates', 'emitter.tpl'), 'utf-8',
+      join(__dirname, '..', 'templates', 'emitter.tpl'),
+      'utf-8',
     );
     api.writeTmpFile({
       path: join(DIR_NAME, 'layout.vue'),
@@ -40,20 +42,20 @@ export default (api: IApi) => {
       content: Mustache.render(keepaliveTpl, {
         keepalive: configStringify(
           (api.userConfig.keepalive as KeepAliveType) || [],
-        )
+        ),
       }),
     });
     api.writeTmpFile({
       path: join(DIR_NAME, 'emitter.ts'),
       noPluginDir: true,
-      content: emitterTpl
+      content: emitterTpl,
     });
     api.writeTmpFile({
       path: join(DIR_NAME, 'index.ts'),
       noPluginDir: true,
       content: `
 export { dropByCacheKey } from './emitter';
-      `
+      `,
     });
     // TODO: export KeepALiveLayout
     // api.writeTmpFile({

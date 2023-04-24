@@ -54,10 +54,10 @@
   <div>999</div>
 </template>
 <script setup>
-import { history } from "valita";
+import { history } from 'valita';
 
 const goToName = () => {
-  history.push("/name");
+  history.push('/name');
 };
 </script>
 <style lang="less" scoped>

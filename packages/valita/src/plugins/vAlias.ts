@@ -7,10 +7,14 @@ export default (api: IApi) => {
     const vue =
       getUserLibDir({ library: 'vue', api }) ||
       dirname(require.resolve('vue/package.json'));
+    const vueRouter =
+      getUserLibDir({ library: 'vue-router', api }) ||
+      dirname(require.resolve('vue-router/package.json'));
     memo.alias = {
       ...memo.alias,
       valita: '@@/exports',
       vue,
+      'vue-router': vueRouter,
     };
     return memo;
   });

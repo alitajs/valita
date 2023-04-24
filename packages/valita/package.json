@@ -40,10 +40,13 @@
     "@alitajs/vue-request": "^0.0.6",
     "@alitajs/vue-utils": "^0.0.6",
     "@alitajs/vue-vant-layout": "^0.0.6",
-    "@umijs/preset-vue": "4.0.63",
-    "@umijs/utils": "4.0.63",
-    "umi": "4.0.63",
-    "vue": "3.2.45"
+    "@umijs/preset-vue": "4.0.0-canary.20230424.1",
+    "@umijs/utils": "4.0.0-canary.20230424.1",
+    "@vueuse/core": "^10.1.0",
+    "umi": "4.0.0-canary.20230424.1",
+    "unplugin-auto-import": "^0.15.3",
+    "vue": "^3.2.47",
+    "vue-router": "4.1.6"
   },
   "gitHead": "c7d4cdfa912d9ed615f40befec22dcc1e196c829"
 }

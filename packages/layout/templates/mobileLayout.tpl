@@ -1,9 +1,9 @@
 <template>
-  <van-config-provider
+  <ConfigProvider
     class="alita-page"
     :theme="layoutCfg?.theme || defaultTheme"
   >
-    <van-nav-bar
+    <NavBar
       class="alita-head"
       :fixed="layoutCfg?.navBar?.fixed !== false"
       v-if="
@@ -44,7 +44,7 @@
         />
         <template v-else>{{ curNavBar?.rightContent }}</template>
       </template>
-    </van-nav-bar>
+    </NavBar>
     <div
       :class="`alita-content ${
         layoutCfg?.navBar?.fixed !== false ? 'fixed_header_content' : ''
@@ -57,7 +57,7 @@
 <router-view></router-view>
 {{/hasKeepAlive}}
     </div>
-    <van-tabbar
+    <Tabbar
       class="alita-footer"
       v-if="tabActive"
       v-model="state.curPagePath"
@@ -65,7 +65,7 @@
       :before-change="onTabBeforeChange"
       @change="onChangeTab"
     >
-      <van-tabbar-item
+      <TabbarItem
         v-for="(item, index) in layoutCfg?.tabBar?.list || []"
         :key="item?.pagePath"
         :icon="
@@ -98,19 +98,23 @@
             "
           />
         </template>
-      </van-tabbar-item>
-    </van-tabbar>
-  </van-config-provider>
+      </TabbarItem>
+    </Tabbar>
+  </ConfigProvider>
 </template>
 <script setup lang="ts">
 
-
+import { ConfigProvider,Tabbar, TabbarItem, NavBar } from 'vant';
 import { computed, reactive, watch, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { getPluginManager } from '../core/plugin';
 import { TabBarListItem } from './types.d';
 import { getPageNavBar, layoutEmitter } from "./layoutState";
 import { changeNavBarConfig } from "./utils";
+import 'vant/es/config-provider/style';
+import 'vant/es/tabbar/style';
+import 'vant/es/tabbar-item/style';
+import 'vant/es/nav-bar/style';
 {{#hasKeepAlive}}
 import KeepAliveLayout from '@@/plugin-keepalive/layout.vue';
 {{/hasKeepAlive}}

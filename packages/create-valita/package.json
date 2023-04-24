@@ -25,7 +25,7 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@umijs/utils": "4.0.63"
+    "@umijs/utils": "4.0.0-canary.20230424.1"
   },
   "gitHead": "c7d4cdfa912d9ed615f40befec22dcc1e196c829"
 }
