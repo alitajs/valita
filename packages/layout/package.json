@@ -20,13 +20,12 @@
   },
   "dependencies": {
     "@alitajs/vue-utils": "^0.0.6",
-    "unplugin-vue-components": "^0.24.1",
-    "vant": "4.0.11",
-    "vue": "3.2.45",
-    "vue-router": "4.1.6"
+    "vant": "4.0.11"
   },
   "peerDependencies": {
-    "valita": "workspace:*"
+    "valita": "workspace:*",
+    "vue": "3.2.45",
+    "vue-router": "4.1.6"
   },
   "publishConfig": {
     "access": "public"

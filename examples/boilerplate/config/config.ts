@@ -1,3 +1,5 @@
 import { defineConfig } from 'valita';
 
-export default defineConfig({});
+export default defineConfig({
+  // vite: {},
+});

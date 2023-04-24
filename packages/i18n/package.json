@@ -20,15 +20,13 @@
   },
   "dependencies": {
     "@alitajs/vue-utils": "^0.0.6",
-    "@vueuse/core": "^9.13.0",
-    "unplugin-vue-components": "^0.24.1",
-    "vue": "3.2.47",
-    "vue-i18n": "^9.2.2",
-    "vue-router": "4.1.6"
+    "vue-i18n": "^9.2.2"
   },
   "peerDependencies": {
-    "unplugin-vue-components": "^0.24.1",
-    "valita": "workspace:*"
+    "@vueuse/core": "^9.13.0",
+    "valita": "workspace:*",
+    "vue": "^3.2.47",
+    "vue-router": "4.1.6"
   },
   "publishConfig": {
     "access": "public"

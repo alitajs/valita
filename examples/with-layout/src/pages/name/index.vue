@@ -2,15 +2,15 @@
   <div>this is name page</div>
 </template>
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { setPageNavBar } from "valita";
+import { onMounted } from 'vue';
+import { setPageNavBar } from 'valita';
 
 onMounted(() => {
   setPageNavBar({
-    pagePath: "/name",
+    pagePath: '/name',
     navBar: {
-      pageTitle: "newName",
-      title: "newName",
+      pageTitle: 'newName',
+      title: 'newName',
     },
   });
 });

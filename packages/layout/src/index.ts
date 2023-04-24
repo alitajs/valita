@@ -1,17 +1,27 @@
 import { getUserLibDir, Mustache } from '@alitajs/vue-utils';
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
-import { VantResolver } from 'unplugin-vue-components/resolvers';
-import VComponents from 'unplugin-vue-components/vite';
-import RComponents from 'unplugin-vue-components/webpack';
 import { IApi } from 'valita';
 const DIR_NAME = 'plugin-layout';
+// TODO: 这有啥用？
 const layoutMap = {
   mobile: 'mobileLayout.tpl',
   state: 'layoutState.tpl',
   utils: 'utils.tpl',
 };
 export default (api: IApi) => {
+  api.describe({
+    key: 'mobileLayout',
+    config: {
+      schema(Joi) {
+        return Joi.alternatives(Joi.boolean(), Joi.string());
+      },
+      // The config.default is not allowed when enableBy is EnableBy.config.
+      // default: 'mobile5',
+      onChange: api.ConfigChangeType.regenerateTmpFiles,
+    },
+    enableBy: api.EnableBy.config,
+  });
   api.modifyConfig((memo) => {
     const vant =
       getUserLibDir({ library: 'vant', api }) ||
@@ -23,23 +33,7 @@ export default (api: IApi) => {
     return memo;
   });
   api.addRuntimePluginKey(() => ['mobileLayout']);
-  api.modifyViteConfig((config) => {
-    config.plugins?.push(
-      VComponents({
-        resolvers: [VantResolver()],
-      }),
-    );
-    return config;
-  });
-  api.modifyWebpackConfig((config) => {
-    config.plugins?.push(
-      // @ts-ignore
-      RComponents({
-        resolvers: [VantResolver()],
-      }),
-    );
-    return config;
-  });
+
   api.onGenerateFiles(() => {
     const layoutTpl = readFileSync(
       // 读取到layout文件内容
