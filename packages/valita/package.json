@@ -1,6 +1,6 @@
 {
   "name": "valita",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "keywords": [
     "umi",
@@ -33,13 +33,13 @@
   },
   "dependencies": {
     "@alita/autoimport": "^3.0.1",
-    "@alitajs/vue-antd-layout": "^0.0.6",
-    "@alitajs/vue-i18n": "^0.0.6",
-    "@alitajs/vue-keepalive": "^0.0.6",
-    "@alitajs/vue-pinia": "^0.0.6",
-    "@alitajs/vue-request": "^0.0.6",
-    "@alitajs/vue-utils": "^0.0.6",
-    "@alitajs/vue-vant-layout": "^0.0.6",
+    "@alitajs/vue-antd-layout": "^0.0.7",
+    "@alitajs/vue-i18n": "^0.0.7",
+    "@alitajs/vue-keepalive": "^0.0.7",
+    "@alitajs/vue-pinia": "^0.0.7",
+    "@alitajs/vue-request": "^0.0.7",
+    "@alitajs/vue-utils": "^0.0.7",
+    "@alitajs/vue-vant-layout": "^0.0.7",
     "@umijs/preset-vue": "4.0.0-canary.20230424.1",
     "@umijs/utils": "4.0.0-canary.20230424.1",
     "@vueuse/core": "^10.1.0",

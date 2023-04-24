@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-vant-layout",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "@alitajs/vue-layout",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/layout#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -19,7 +19,7 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "^0.0.6",
+    "@alitajs/vue-utils": "^0.0.7",
     "vant": "4.0.11"
   },
   "peerDependencies": {
