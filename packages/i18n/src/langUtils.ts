@@ -56,7 +56,6 @@ export class LangUtils {
         paths: groups[name].map((item) => winPath(item.path)),
       };
     });
-    console.log(promises);
     return promises;
   }
 
