@@ -8,3 +8,4 @@ lib
 autoImport.d.ts
 autoVueTemplate.d.ts
 components.d.ts
+auto-imports.d.ts
