@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "father build",
-    "dev": "vfather dev"
+    "dev": "father dev"
   },
   "dependencies": {
     "@umijs/bundler-utils": "^4.0.64",
