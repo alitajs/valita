@@ -10,6 +10,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@alitajs/access": "workspace:*",
     "valita": "workspace:*"
   }
 }
