@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "father build",
-    "dev": "vfather dev"
+    "dev": "father dev"
   },
   "dependencies": {
     "@alitajs/vue-utils": "^0.0.8",

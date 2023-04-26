@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "father build",
-    "dev": "vfather dev",
+    "dev": "father dev",
     "watch": "father build -w"
   },
   "peerDependencies": {
