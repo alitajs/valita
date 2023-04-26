@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-pinia",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "@alitajs/vue-pinia",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/pinia#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -19,7 +19,7 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "^0.0.7",
+    "@alitajs/vue-utils": "^0.0.8",
     "pinia": "^2.0.33"
   },
   "peerDependencies": {

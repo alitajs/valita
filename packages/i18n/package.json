@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/vue-i18n",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "@alitajs/vue-i18n",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/i18n#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
@@ -19,7 +19,7 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "^0.0.7",
+    "@alitajs/vue-utils": "^0.0.8",
     "vue-i18n": "^9.2.2"
   },
   "peerDependencies": {
