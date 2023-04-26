@@ -38,6 +38,7 @@
     "@alitajs/vue-keepalive": "^0.0.8",
     "@alitajs/vue-pinia": "^0.0.8",
     "@alitajs/vue-request": "^0.0.8",
+    "@alitajs/vue-route-props": "^0.0.8",
     "@alitajs/vue-utils": "^0.0.8",
     "@alitajs/vue-vant-layout": "^0.0.8",
     "@umijs/preset-vue": "4.0.0-canary.20230424.1",

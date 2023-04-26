@@ -9,6 +9,7 @@ export default (api: IApi) => {
     require.resolve('./plugins/vAppData'),
     require.resolve('./plugins/vChecker'),
     require.resolve('./plugins/vConfig'),
+    require.resolve('@alitajs/vue-route-props'),
     require.resolve('@alitajs/vue-pinia'),
     require.resolve('@alitajs/vue-request'),
     require.resolve('@alitajs/vue-keepalive'),
