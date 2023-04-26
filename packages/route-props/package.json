@@ -1,0 +1,34 @@
+{
+  "name": "@alitajs/vue-route-props",
+  "version": "0.0.8",
+  "description": "@alitajs/vue-route-props",
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/route-props#readme",
+  "bugs": "https://github.com/alitajs/valita/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alitajs/valita"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build",
+    "dev": "vfather dev"
+  },
+  "dependencies": {
+    "@alitajs/vue-utils": "^0.0.8",
+    "@umijs/bundler-utils": "^4.0.64"
+  },
+  "peerDependencies": {
+    "valita": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
+  ]
+}

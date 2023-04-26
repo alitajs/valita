@@ -155,7 +155,7 @@ importers:
   packages/i18n:
     dependencies:
       '@alitajs/vue-utils':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../utils
       '@vueuse/core':
         specifier: ^9.13.0
@@ -182,7 +182,7 @@ importers:
   packages/layout:
     dependencies:
       '@alitajs/vue-utils':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../utils
       valita:
         specifier: workspace:*
@@ -200,7 +200,7 @@ importers:
   packages/pinia:
     dependencies:
       '@alitajs/vue-utils':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../utils
       pinia:
         specifier: ^2.0.33
@@ -215,11 +215,23 @@ importers:
         specifier: ^3.1.1
         version: registry.npmmirror.com/@alita/request@3.1.1
       '@alitajs/vue-utils':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../utils
       ahooks-vue:
         specifier: ^0.15.0
         version: registry.npmmirror.com/ahooks-vue@0.15.0(axios@1.3.5)(vue@3.2.47)
+      valita:
+        specifier: workspace:*
+        version: link:../valita
+
+  packages/route-props:
+    dependencies:
+      '@alitajs/vue-utils':
+        specifier: ^0.0.8
+        version: link:../utils
+      '@umijs/bundler-utils':
+        specifier: ^4.0.64
+        version: 4.0.64
       valita:
         specifier: workspace:*
         version: link:../valita
@@ -245,25 +257,28 @@ importers:
         specifier: ^3.0.1
         version: registry.npmmirror.com/@alita/autoimport@3.0.1
       '@alitajs/vue-antd-layout':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../antd-layout
       '@alitajs/vue-i18n':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../i18n
       '@alitajs/vue-keepalive':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../keepalive
       '@alitajs/vue-pinia':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../pinia
       '@alitajs/vue-request':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../request
+      '@alitajs/vue-route-props':
+        specifier: ^0.0.8
+        version: link:../route-props
       '@alitajs/vue-utils':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../utils
       '@alitajs/vue-vant-layout':
-        specifier: ^0.0.6
+        specifier: ^0.0.8
         version: link:../layout
       '@umijs/preset-vue':
         specifier: 4.0.0-canary.20230424.1
@@ -2170,6 +2185,29 @@ packages:
     resolution: {integrity: sha512-Im4tBovzK5Cc+C6k7/JfCA11R1gBvgh7arQLBopWALVpVElzcdo62188lwy7cXy/BZm5MmJcQx0SDme9b2AujQ==}
     dependencies:
       '@umijs/utils': 4.0.0-canary.20230424.1
+      esbuild: 0.16.17
+      regenerate: 1.4.2
+      regenerate-unicode-properties: 10.1.0
+      spdy: 4.0.2
+    transitivePeerDependencies:
+      - supports-color
+
+  /@umijs/bundler-utils@4.0.59:
+    resolution: {integrity: sha512-hgScOWi1x3vrKMAMFdZNanDN0p4Iae1avsuP8vcpLtXBNSgGbWeNJCv0fVgInyfH1EsTNd2CzhqwR8lFOhA+tg==}
+    dependencies:
+      '@umijs/utils': 4.0.59
+      esbuild: registry.npmmirror.com/esbuild@0.16.17
+      regenerate: registry.npmmirror.com/regenerate@1.4.2
+      regenerate-unicode-properties: registry.npmmirror.com/regenerate-unicode-properties@10.1.0
+      spdy: registry.npmmirror.com/spdy@4.0.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@umijs/bundler-utils@4.0.64:
+    resolution: {integrity: sha512-JBplbckYXUxtwRYJQcKlL1RXYSfpKBZud65NbpRsH09ZK7DmAGHeDFw4tqmnPOkjPr0jdye+jPelEStn9HeYFQ==}
+    dependencies:
+      '@umijs/utils': 4.0.64
       esbuild: 0.16.17
       regenerate: 1.4.2
       regenerate-unicode-properties: 10.1.0
@@ -5225,7 +5263,6 @@ packages:
 
   /isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
-    dev: false
 
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
@@ -5778,7 +5815,6 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
-    optional: true
 
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
@@ -6880,6 +6916,16 @@ packages:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
+
+  /readable-stream@4.3.0:
+    resolution: {integrity: sha512-MuEnA0lbSi7JS8XM+WNJlWZkHAAdm7gETHdFK//Q/mChGyj2akEFtdLZh32jSdkWGbRwCW9pn6g3LWDdDeZnBQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      abort-controller: registry.npmmirror.com/abort-controller@3.0.0
+      buffer: registry.npmmirror.com/buffer@6.0.3
+      events: registry.npmmirror.com/events@3.3.0
+      process: registry.npmmirror.com/process@0.11.10
+    dev: true
 
   /readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
@@ -8240,7 +8286,7 @@ packages:
     name: '@alita/autoimport'
     version: 3.0.1
     dependencies:
-      '@umijs/bundler-utils': registry.npmmirror.com/@umijs/bundler-utils@4.0.59
+      '@umijs/bundler-utils': 4.0.59
       '@umijs/utils': 4.0.59
     transitivePeerDependencies:
       - supports-color
@@ -8506,7 +8552,7 @@ packages:
       '@babel/helper-split-export-declaration': registry.npmmirror.com/@babel/helper-split-export-declaration@7.18.6
       '@babel/parser': 7.21.4
       '@babel/types': 7.21.4
-      debug: registry.npmmirror.com/debug@4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
       globals: registry.npmmirror.com/globals@11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -10127,7 +10173,7 @@ packages:
     dependencies:
       '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.21.0
       '@bloomberg/record-tuple-polyfill': registry.npmmirror.com/@bloomberg/record-tuple-polyfill@0.0.4
-      '@umijs/bundler-utils': registry.npmmirror.com/@umijs/bundler-utils@4.0.64
+      '@umijs/bundler-utils': 4.0.64
       '@umijs/utils': 4.0.64
       babel-plugin-styled-components: registry.npmmirror.com/babel-plugin-styled-components@2.0.7(styled-components@5.3.9)
       core-js: registry.npmmirror.com/core-js@3.28.0
@@ -10142,7 +10188,7 @@ packages:
     version: 4.0.64
     hasBin: true
     dependencies:
-      '@umijs/bundler-utils': registry.npmmirror.com/@umijs/bundler-utils@4.0.64
+      '@umijs/bundler-utils': 4.0.64
       '@umijs/utils': 4.0.64
       enhanced-resolve: registry.npmmirror.com/enhanced-resolve@5.9.3
       postcss: 8.4.21
@@ -10151,20 +10197,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  registry.npmmirror.com/@umijs/bundler-utils@4.0.59:
-    resolution: {integrity: sha512-hgScOWi1x3vrKMAMFdZNanDN0p4Iae1avsuP8vcpLtXBNSgGbWeNJCv0fVgInyfH1EsTNd2CzhqwR8lFOhA+tg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@umijs/bundler-utils/-/bundler-utils-4.0.59.tgz}
-    name: '@umijs/bundler-utils'
-    version: 4.0.59
-    dependencies:
-      '@umijs/utils': 4.0.59
-      esbuild: registry.npmmirror.com/esbuild@0.16.17
-      regenerate: registry.npmmirror.com/regenerate@1.4.2
-      regenerate-unicode-properties: registry.npmmirror.com/regenerate-unicode-properties@10.1.0
-      spdy: registry.npmmirror.com/spdy@4.0.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   registry.npmmirror.com/@umijs/bundler-utils@4.0.64:
     resolution: {integrity: sha512-JBplbckYXUxtwRYJQcKlL1RXYSfpKBZud65NbpRsH09ZK7DmAGHeDFw4tqmnPOkjPr0jdye+jPelEStn9HeYFQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@umijs/bundler-utils/-/bundler-utils-4.0.64.tgz}
@@ -10178,6 +10210,7 @@ packages:
       spdy: registry.npmmirror.com/spdy@4.0.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
 
   registry.npmmirror.com/@umijs/bundler-webpack@4.0.64(styled-components@5.3.9)(typescript@4.8.4)(webpack@5.78.0):
     resolution: {integrity: sha512-NVoFMIDOj/OUkwyJYe/VTGwsXmsHwaSuahtATHnL1W+AWpQFKBaojCjWqSarFkgJ7qBNe/p7cjK6KZopvbDf8Q==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@umijs/bundler-webpack/-/bundler-webpack-4.0.64.tgz}
@@ -10192,7 +10225,7 @@ packages:
       '@svgr/plugin-svgo': registry.npmmirror.com/@svgr/plugin-svgo@6.5.1(@svgr/core@6.5.1)
       '@types/hapi__joi': registry.npmmirror.com/@types/hapi__joi@17.1.9
       '@umijs/babel-preset-umi': registry.npmmirror.com/@umijs/babel-preset-umi@4.0.64(styled-components@5.3.9)
-      '@umijs/bundler-utils': registry.npmmirror.com/@umijs/bundler-utils@4.0.64
+      '@umijs/bundler-utils': 4.0.64
       '@umijs/case-sensitive-paths-webpack-plugin': registry.npmmirror.com/@umijs/case-sensitive-paths-webpack-plugin@1.0.1
       '@umijs/mfsu': registry.npmmirror.com/@umijs/mfsu@4.0.64
       '@umijs/utils': 4.0.64
@@ -10232,7 +10265,7 @@ packages:
     name: '@umijs/core'
     version: 4.0.64
     dependencies:
-      '@umijs/bundler-utils': registry.npmmirror.com/@umijs/bundler-utils@4.0.64
+      '@umijs/bundler-utils': 4.0.64
       '@umijs/utils': 4.0.64
     transitivePeerDependencies:
       - supports-color
@@ -10244,7 +10277,7 @@ packages:
     version: 4.0.64
     dependencies:
       '@umijs/bundler-esbuild': registry.npmmirror.com/@umijs/bundler-esbuild@4.0.64
-      '@umijs/bundler-utils': registry.npmmirror.com/@umijs/bundler-utils@4.0.64
+      '@umijs/bundler-utils': 4.0.64
       '@umijs/utils': 4.0.64
       enhanced-resolve: registry.npmmirror.com/enhanced-resolve@5.9.3
       is-equal: registry.npmmirror.com/is-equal@1.6.4
@@ -10644,7 +10677,7 @@ packages:
     version: 6.0.2
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: registry.npmmirror.com/debug@4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -10655,7 +10688,7 @@ packages:
     version: 4.3.0
     engines: {node: '>= 8.0.0'}
     dependencies:
-      debug: registry.npmmirror.com/debug@4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
       depd: registry.npmmirror.com/depd@2.0.0
       humanize-ms: registry.npmmirror.com/humanize-ms@1.2.1
     transitivePeerDependencies:
@@ -10808,7 +10841,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       delegates: registry.npmmirror.com/delegates@1.0.0
-      readable-stream: registry.npmmirror.com/readable-stream@4.3.0
+      readable-stream: 4.3.0
     dev: true
 
   registry.npmmirror.com/arg@5.0.2:
@@ -10879,8 +10912,8 @@ packages:
     version: 5.4.1
     dependencies:
       bn.js: registry.npmmirror.com/bn.js@4.12.0
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      minimalistic-assert: registry.npmmirror.com/minimalistic-assert@1.0.1
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
       safer-buffer: registry.npmmirror.com/safer-buffer@2.1.2
     dev: true
 
@@ -11090,8 +11123,8 @@ packages:
     version: 4.1.0
     dependencies:
       buffer: registry.npmmirror.com/buffer@5.7.1
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      readable-stream: registry.npmmirror.com/readable-stream@3.6.2
+      inherits: 2.0.4
+      readable-stream: 3.6.2
     dev: true
 
   registry.npmmirror.com/bluebird@3.7.2:
@@ -11158,8 +11191,8 @@ packages:
       cipher-base: registry.npmmirror.com/cipher-base@1.0.4
       create-hash: registry.npmmirror.com/create-hash@1.2.0
       evp_bytestokey: registry.npmmirror.com/evp_bytestokey@1.0.3
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/browserify-cipher@1.0.1:
@@ -11179,8 +11212,8 @@ packages:
     dependencies:
       cipher-base: registry.npmmirror.com/cipher-base@1.0.4
       des.js: registry.npmmirror.com/des.js@1.0.1
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/browserify-rsa@4.1.0:
@@ -11204,7 +11237,7 @@ packages:
       elliptic: registry.npmmirror.com/elliptic@6.5.4
       inherits: registry.npmmirror.com/inherits@2.0.4
       parse-asn1: registry.npmmirror.com/parse-asn1@5.1.6
-      readable-stream: registry.npmmirror.com/readable-stream@3.6.2
+      readable-stream: 3.6.2
       safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
     dev: true
 
@@ -11529,8 +11562,8 @@ packages:
     name: cipher-base
     version: 1.0.4
     dependencies:
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/clean-stack@2.2.0:
@@ -11914,6 +11947,7 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/core-util-is/-/core-util-is-1.0.3.tgz}
     name: core-util-is
     version: 1.0.3
+    dev: true
 
   registry.npmmirror.com/cors@2.8.5:
     resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/cors/-/cors-2.8.5.tgz}
@@ -12268,7 +12302,7 @@ packages:
     dependencies:
       globby: registry.npmmirror.com/globby@11.1.0
       graceful-fs: 4.2.11
-      is-glob: registry.npmmirror.com/is-glob@4.0.3
+      is-glob: 4.0.3
       is-path-cwd: registry.npmmirror.com/is-path-cwd@2.2.0
       is-path-inside: registry.npmmirror.com/is-path-inside@3.0.3
       p-map: registry.npmmirror.com/p-map@4.0.0
@@ -12307,8 +12341,8 @@ packages:
     name: des.js
     version: 1.0.1
     dependencies:
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      minimalistic-assert: registry.npmmirror.com/minimalistic-assert@1.0.1
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
     dev: true
 
   registry.npmmirror.com/detect-indent@5.0.0:
@@ -12344,6 +12378,7 @@ packages:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/detect-node/-/detect-node-2.1.0.tgz}
     name: detect-node
     version: 2.1.0
+    dev: false
 
   registry.npmmirror.com/diffie-hellman@5.0.3:
     resolution: {integrity: sha512-kqag/Nl+f3GwyK25fhUMYj81BUOrZ9IuJsjIcDE5icNM9FJHAVm3VcUDxdLPoQtTuUylWm6ZIknYJwwaPxsUzg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/diffie-hellman/-/diffie-hellman-5.0.3.tgz}
@@ -12479,8 +12514,8 @@ packages:
       brorand: registry.npmmirror.com/brorand@1.1.0
       hash.js: registry.npmmirror.com/hash.js@1.1.7
       hmac-drbg: registry.npmmirror.com/hmac-drbg@1.0.1
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      minimalistic-assert: registry.npmmirror.com/minimalistic-assert@1.0.1
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: registry.npmmirror.com/minimalistic-crypto-utils@1.0.1
     dev: true
 
@@ -12714,6 +12749,7 @@ packages:
       '@esbuild/win32-arm64': 0.16.17
       '@esbuild/win32-ia32': 0.16.17
       '@esbuild/win32-x64': 0.16.17
+    dev: false
 
   registry.npmmirror.com/esbuild@0.17.16:
     resolution: {integrity: sha512-aeSuUKr9aFVY9Dc8ETVELGgkj4urg5isYx8pLf4wlGgB0vTFjxJQdHnNH6Shmx4vYYrOTLCHtRI5i1XZ9l2Zcg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/esbuild/-/esbuild-0.17.16.tgz}
@@ -12933,7 +12969,7 @@ packages:
     version: 1.0.3
     dependencies:
       md5.js: registry.npmmirror.com/md5.js@1.3.5
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/execa@5.0.0:
@@ -13045,7 +13081,7 @@ packages:
     dependencies:
       '@microsoft/api-extractor': registry.npmmirror.com/@microsoft/api-extractor@7.34.3(@types/node@18.15.11)
       '@umijs/babel-preset-umi': registry.npmmirror.com/@umijs/babel-preset-umi@4.0.64(styled-components@5.3.9)
-      '@umijs/bundler-utils': registry.npmmirror.com/@umijs/bundler-utils@4.0.64
+      '@umijs/bundler-utils': 4.0.64
       '@umijs/bundler-webpack': registry.npmmirror.com/@umijs/bundler-webpack@4.0.64(styled-components@5.3.9)(typescript@4.8.4)(webpack@5.78.0)
       '@umijs/case-sensitive-paths-webpack-plugin': registry.npmmirror.com/@umijs/case-sensitive-paths-webpack-plugin@1.0.1
       '@umijs/core': registry.npmmirror.com/@umijs/core@4.0.64
@@ -13595,7 +13631,7 @@ packages:
     dependencies:
       fs.realpath: registry.npmmirror.com/fs.realpath@1.0.0
       inflight: registry.npmmirror.com/inflight@1.0.6
-      inherits: registry.npmmirror.com/inherits@2.0.4
+      inherits: 2.0.4
       minimatch: 3.1.2
       once: registry.npmmirror.com/once@1.4.0
       path-is-absolute: registry.npmmirror.com/path-is-absolute@1.0.1
@@ -13756,6 +13792,7 @@ packages:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/handle-thing/-/handle-thing-2.0.1.tgz}
     name: handle-thing
     version: 2.0.1
+    dev: false
 
   registry.npmmirror.com/handlebars@4.7.7:
     resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/handlebars/-/handlebars-4.7.7.tgz}
@@ -13848,9 +13885,9 @@ packages:
     version: 3.1.0
     engines: {node: '>=4'}
     dependencies:
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      readable-stream: registry.npmmirror.com/readable-stream@3.6.2
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      inherits: 2.0.4
+      readable-stream: 3.6.2
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/hash.js@1.1.7:
@@ -13858,8 +13895,8 @@ packages:
     name: hash.js
     version: 1.1.7
     dependencies:
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      minimalistic-assert: registry.npmmirror.com/minimalistic-assert@1.0.1
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
     dev: true
 
   registry.npmmirror.com/header-case@2.0.4:
@@ -13877,7 +13914,7 @@ packages:
     version: 1.0.1
     dependencies:
       hash.js: registry.npmmirror.com/hash.js@1.1.7
-      minimalistic-assert: registry.npmmirror.com/minimalistic-assert@1.0.1
+      minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: registry.npmmirror.com/minimalistic-crypto-utils@1.0.1
     dev: true
 
@@ -13928,10 +13965,11 @@ packages:
     name: hpack.js
     version: 2.1.6
     dependencies:
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      obuf: registry.npmmirror.com/obuf@1.1.2
-      readable-stream: registry.npmmirror.com/readable-stream@2.3.8
-      wbuf: registry.npmmirror.com/wbuf@1.7.3
+      inherits: 2.0.4
+      obuf: 1.1.2
+      readable-stream: 2.3.8
+      wbuf: 1.7.3
+    dev: false
 
   registry.npmmirror.com/html-entities@2.3.3:
     resolution: {integrity: sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/html-entities/-/html-entities-2.3.3.tgz}
@@ -13956,6 +13994,7 @@ packages:
     resolution: {integrity: sha512-LmpOGxTfbpgtGVxJrj5k7asXHCgNZp5nLfp+hWc8QQRqtb7fUy6kRY3BO1h9ddF6yIPYUARgxGOwB42DnxIaNw==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/http-deceiver/-/http-deceiver-1.2.7.tgz}
     name: http-deceiver
     version: 1.2.7
+    dev: false
 
   registry.npmmirror.com/http-proxy-agent@5.0.0:
     resolution: {integrity: sha512-n2hY8YdoRE1i7r6M0w9DIw5GgZN0G25P8zLCRQ8rjXtTU3vsNFBI/vWK/UIeE6g5MUUz6avwAPXmL6Fy9D/90w==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/http-proxy-agent/-/http-proxy-agent-5.0.0.tgz}
@@ -13965,7 +14004,7 @@ packages:
     dependencies:
       '@tootallnate/once': registry.npmmirror.com/@tootallnate/once@2.0.0
       agent-base: registry.npmmirror.com/agent-base@6.0.2
-      debug: registry.npmmirror.com/debug@4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13983,7 +14022,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: registry.npmmirror.com/agent-base@6.0.2
-      debug: registry.npmmirror.com/debug@4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -14000,7 +14039,7 @@ packages:
     name: humanize-ms
     version: 1.2.1
     dependencies:
-      ms: registry.npmmirror.com/ms@2.1.3
+      ms: 2.1.3
     dev: true
 
   registry.npmmirror.com/husky@8.0.3:
@@ -14641,6 +14680,7 @@ packages:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/isarray/-/isarray-1.0.0.tgz}
     name: isarray
     version: 1.0.0
+    dev: true
 
   registry.npmmirror.com/isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/isarray/-/isarray-2.0.5.tgz}
@@ -15358,8 +15398,8 @@ packages:
     version: 1.3.5
     dependencies:
       hash-base: registry.npmmirror.com/hash-base@3.1.0
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/mdn-data@2.0.14:
@@ -15484,11 +15524,6 @@ packages:
     version: 1.0.1
     engines: {node: '>=4'}
     dev: true
-
-  registry.npmmirror.com/minimalistic-assert@1.0.1:
-    resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz}
-    name: minimalistic-assert
-    version: 1.0.1
 
   registry.npmmirror.com/minimalistic-crypto-utils@1.0.1:
     resolution: {integrity: sha512-JIYlbt6g8i5jKfJ3xz7rF0LXmv2TkDxBLUkiBeZ7bAx4GnnNMr8xFpGnOxn6GhTEHx3SjRrZEoU+j04prX1ktg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz}
@@ -15671,12 +15706,6 @@ packages:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/ms/-/ms-2.1.2.tgz}
     name: ms
     version: 2.1.2
-
-  registry.npmmirror.com/ms@2.1.3:
-    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/ms/-/ms-2.1.3.tgz}
-    name: ms
-    version: 2.1.3
-    dev: true
 
   registry.npmmirror.com/multimatch@5.0.0:
     resolution: {integrity: sha512-ypMKuglUrZUD99Tk2bUQ+xNQj43lPEfAeX2o9cTteAmShXy2VHDJpuwu1o0xqoKCt9jLVAvwyFKdLTPXKAfJyA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/multimatch/-/multimatch-5.0.0.tgz}
@@ -16265,6 +16294,7 @@ packages:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/obuf/-/obuf-1.1.2.tgz}
     name: obuf
     version: 1.1.2
+    dev: false
 
   registry.npmmirror.com/once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/once/-/once-1.4.0.tgz}
@@ -16571,7 +16601,7 @@ packages:
       browserify-aes: registry.npmmirror.com/browserify-aes@1.2.0
       evp_bytestokey: registry.npmmirror.com/evp_bytestokey@1.0.3
       pbkdf2: registry.npmmirror.com/pbkdf2@3.1.2
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/parse-conflict-json@3.0.1:
@@ -17414,6 +17444,7 @@ packages:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz}
     name: process-nextick-args
     version: 2.0.1
+    dev: true
 
   registry.npmmirror.com/process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/process/-/process-0.11.10.tgz}
@@ -17730,6 +17761,7 @@ packages:
       safe-buffer: registry.npmmirror.com/safe-buffer@5.1.2
       string_decoder: registry.npmmirror.com/string_decoder@1.1.1
       util-deprecate: registry.npmmirror.com/util-deprecate@1.0.2
+    dev: true
 
   registry.npmmirror.com/readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/readable-stream/-/readable-stream-3.6.2.tgz}
@@ -17737,21 +17769,9 @@ packages:
     version: 3.6.2
     engines: {node: '>= 6'}
     dependencies:
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      string_decoder: registry.npmmirror.com/string_decoder@1.3.0
-      util-deprecate: registry.npmmirror.com/util-deprecate@1.0.2
-
-  registry.npmmirror.com/readable-stream@4.3.0:
-    resolution: {integrity: sha512-MuEnA0lbSi7JS8XM+WNJlWZkHAAdm7gETHdFK//Q/mChGyj2akEFtdLZh32jSdkWGbRwCW9pn6g3LWDdDeZnBQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/readable-stream/-/readable-stream-4.3.0.tgz}
-    name: readable-stream
-    version: 4.3.0
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dependencies:
-      abort-controller: registry.npmmirror.com/abort-controller@3.0.0
-      buffer: registry.npmmirror.com/buffer@6.0.3
-      events: registry.npmmirror.com/events@3.3.0
-      process: registry.npmmirror.com/process@0.11.10
-    dev: true
+      inherits: 2.0.4
+      string_decoder: 1.3.0
+      util-deprecate: 1.0.2
 
   registry.npmmirror.com/readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/readdirp/-/readdirp-3.6.0.tgz}
@@ -17792,12 +17812,14 @@ packages:
     version: 10.1.0
     engines: {node: '>=4'}
     dependencies:
-      regenerate: registry.npmmirror.com/regenerate@1.4.2
+      regenerate: 1.4.2
+    dev: false
 
   registry.npmmirror.com/regenerate@1.4.2:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/regenerate/-/regenerate-1.4.2.tgz}
     name: regenerate
     version: 1.4.2
+    dev: false
 
   registry.npmmirror.com/regenerator-runtime@0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz}
@@ -17933,7 +17955,7 @@ packages:
     version: 2.0.2
     dependencies:
       hash-base: registry.npmmirror.com/hash-base@3.1.0
-      inherits: registry.npmmirror.com/inherits@2.0.4
+      inherits: 2.0.4
     dev: true
 
   registry.npmmirror.com/run-async@2.4.1:
@@ -17962,11 +17984,13 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz}
     name: safe-buffer
     version: 5.1.2
+    dev: true
 
   registry.npmmirror.com/safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.2.1.tgz}
     name: safe-buffer
     version: 5.2.1
+    dev: true
 
   registry.npmmirror.com/safe-regex-test@1.0.0:
     resolution: {integrity: sha512-JBUUzyOgEwXQY1NuPtvcj/qcBDbDmEvWufhlnXZIm75DEHp+afM1r1ujJpJsV/gSM4t59tpDyPi1sd6ZaPFfsA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/safe-regex-test/-/safe-regex-test-1.0.0.tgz}
@@ -17998,6 +18022,7 @@ packages:
     resolution: {integrity: sha512-mEugaLK+YfkijB4fx0e6kImuJdCIt2LxCRcbEYPqRGCs4F2ogyfZU5IAZRdjCP8JPq2AtdNoC/Dux63d9Kiryg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/select-hose/-/select-hose-2.0.0.tgz}
     name: select-hose
     version: 2.0.0
+    dev: false
 
   registry.npmmirror.com/semver@5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/semver/-/semver-5.7.1.tgz}
@@ -18069,8 +18094,8 @@ packages:
     version: 2.4.11
     hasBin: true
     dependencies:
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
     dev: true
 
   registry.npmmirror.com/shallow-clone@3.0.1:
@@ -18174,7 +18199,7 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       agent-base: registry.npmmirror.com/agent-base@6.0.2
-      debug: registry.npmmirror.com/debug@4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
       socks: registry.npmmirror.com/socks@2.7.1
     transitivePeerDependencies:
       - supports-color
@@ -18281,7 +18306,7 @@ packages:
     name: spdy-transport
     version: 3.0.0
     dependencies:
-      debug: registry.npmmirror.com/debug@4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
       detect-node: registry.npmmirror.com/detect-node@2.1.0
       hpack.js: registry.npmmirror.com/hpack.js@2.1.6
       obuf: registry.npmmirror.com/obuf@1.1.2
@@ -18289,6 +18314,7 @@ packages:
       wbuf: registry.npmmirror.com/wbuf@1.7.3
     transitivePeerDependencies:
       - supports-color
+    dev: false
 
   registry.npmmirror.com/spdy@4.0.2:
     resolution: {integrity: sha512-r46gZQZQV+Kl9oItvl1JZZqJKGr+oEkB08A6BzkiR7593/7IbtuncXHd2YoYeTsG4157ZssMu9KYvUHLcjcDoA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/spdy/-/spdy-4.0.2.tgz}
@@ -18303,13 +18329,14 @@ packages:
       spdy-transport: registry.npmmirror.com/spdy-transport@3.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
 
   registry.npmmirror.com/split2@3.2.2:
     resolution: {integrity: sha512-9NThjpgZnifTkJpzTZ7Eue85S49QwpNhZTq6GRJwObb6jnLFNGB7Qm73V5HewTROPyxD0C29xqmaI68bQtV+hg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/split2/-/split2-3.2.2.tgz}
     name: split2
     version: 3.2.2
     dependencies:
-      readable-stream: registry.npmmirror.com/readable-stream@3.6.2
+      readable-stream: 3.6.2
     dev: true
 
   registry.npmmirror.com/split@0.3.3:
@@ -18477,6 +18504,7 @@ packages:
     version: 1.1.1
     dependencies:
       safe-buffer: registry.npmmirror.com/safe-buffer@5.1.2
+    dev: true
 
   registry.npmmirror.com/string_decoder@1.3.0:
     resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/string_decoder/-/string_decoder-1.3.0.tgz}
@@ -18484,6 +18512,7 @@ packages:
     version: 1.3.0
     dependencies:
       safe-buffer: registry.npmmirror.com/safe-buffer@5.2.1
+    dev: true
 
   registry.npmmirror.com/strip-ansi@6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/strip-ansi/-/strip-ansi-6.0.1.tgz}
@@ -18710,8 +18739,8 @@ packages:
       bl: registry.npmmirror.com/bl@4.1.0
       end-of-stream: registry.npmmirror.com/end-of-stream@1.4.4
       fs-constants: registry.npmmirror.com/fs-constants@1.0.0
-      inherits: registry.npmmirror.com/inherits@2.0.4
-      readable-stream: registry.npmmirror.com/readable-stream@3.6.2
+      inherits: 2.0.4
+      readable-stream: 3.6.2
     dev: true
 
   registry.npmmirror.com/tar@6.1.11:
@@ -18812,7 +18841,7 @@ packages:
     name: through2
     version: 2.0.5
     dependencies:
-      readable-stream: registry.npmmirror.com/readable-stream@2.3.8
+      readable-stream: 2.3.8
       xtend: registry.npmmirror.com/xtend@4.0.2
     dev: true
 
@@ -19256,6 +19285,7 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/util-deprecate/-/util-deprecate-1.0.2.tgz}
     name: util-deprecate
     version: 1.0.2
+    dev: true
 
   registry.npmmirror.com/util@0.10.3:
     resolution: {integrity: sha512-5KiHfsmkqacuKjkRkdV7SsfDJ2EGiPsK92s2MhNSY0craxjTdKTtqKsJaCWp4LW33ZZ0OPUv1WO/TFvNQRiQxQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/util/-/util-0.10.3.tgz}
@@ -19479,7 +19509,8 @@ packages:
     name: wbuf
     version: 1.7.3
     dependencies:
-      minimalistic-assert: registry.npmmirror.com/minimalistic-assert@1.0.1
+      minimalistic-assert: 1.0.1
+    dev: false
 
   registry.npmmirror.com/wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/wcwidth/-/wcwidth-1.0.1.tgz}
@@ -19605,7 +19636,7 @@ packages:
       is-generator-function: registry.npmmirror.com/is-generator-function@1.0.10
       is-regex: registry.npmmirror.com/is-regex@1.1.4
       is-weakref: registry.npmmirror.com/is-weakref@1.0.2
-      isarray: registry.npmmirror.com/isarray@2.0.5
+      isarray: 2.0.5
       which-boxed-primitive: registry.npmmirror.com/which-boxed-primitive@1.0.2
       which-collection: registry.npmmirror.com/which-collection@1.0.1
       which-typed-array: registry.npmmirror.com/which-typed-array@1.1.9
