@@ -69,6 +69,12 @@ importers:
       babel-plugin-import: registry.npmmirror.com/babel-plugin-import/1.13.6
       vite-plugin-style-import: registry.npmmirror.com/vite-plugin-style-import/2.0.0
 
+  examples/with-access:
+    dependencies:
+      valita:
+        specifier: workspace:*
+        version: link:../../packages/valita
+
   examples/with-i18n:
     specifiers:
       valita: workspace:*
