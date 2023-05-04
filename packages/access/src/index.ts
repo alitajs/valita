@@ -7,7 +7,9 @@ export default (api: IApi) => {
     key: 'access',
     config: {
       schema({ zod }) {
-        return zod.map(zod.string(), zod.array(zod.string()));
+        return zod.object({
+          roles: zod.map(zod.string(), zod.array(zod.string()))
+        }).required();
       }
     },
     enableBy: api.EnableBy.config,
@@ -15,16 +17,19 @@ export default (api: IApi) => {
   api.writeTmpFile({
     path: join(DIR_NAME, 'index.ts'),
     noPluginDir: true,
-    content: ``
+    tplPath: join(__dirname, 'template/core.tpl'),
   })
   api.writeTmpFile({
     path: join(DIR_NAME, 'runtime.ts'),
     noPluginDir: true,
-    content: ``
+    tplPath: join(__dirname, 'template/runtime.tpl')
   })
   api.writeTmpFile({
     path: join(DIR_NAME, 'types.d.ts'),
     noPluginDir: true,
-    content: ``
+    tplPath: join(__dirname, 'template/types.d.ts')
   })
+  api.addRuntimePlugin(() => {
+    return [`${api.paths.absTmpPath}/${DIR_NAME}/runtime.ts`];
+  });
 };
