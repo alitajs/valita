@@ -11,6 +11,7 @@ export default (api: IApi) => {
     require.resolve('./plugins/vConfig'),
     require.resolve('@alitajs/vue-route-props'),
     require.resolve('@alitajs/vue-pinia'),
+    require.resolve('@alitajs/vue-vuex'),
     require.resolve('@alitajs/vue-request'),
     require.resolve('@alitajs/vue-keepalive'),
     require.resolve('@alitajs/vue-i18n'),

@@ -1,8 +1,8 @@
 {
-  "name": "@alitajs/vue-utils",
+  "name": "@alitajs/vue-vuex",
   "version": "0.0.8",
-  "description": "@alitajs/vue-utils",
-  "homepage": "https://github.com/alitajs/valita/tree/master/packages/utils#readme",
+  "description": "@alitajs/vue-vuex",
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/vuex#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -19,12 +19,12 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@umijs/bundler-utils": "^4.0.64",
-    "@umijs/utils": "4.0.0-canary.20230424.1",
-    "umi": "4.0.0-canary.20230424.1"
+    "@alitajs/vue-utils": "^0.0.8",
+    "vuex": "4.1.0"
   },
   "peerDependencies": {
     "valita": "workspace:*"
+    
   },
   "publishConfig": {
     "access": "public"

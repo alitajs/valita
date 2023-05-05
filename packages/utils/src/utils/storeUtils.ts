@@ -1,4 +1,4 @@
-import { glob, winPath } from '@alitajs/vue-utils';
+import { glob, winPath } from '@umijs/utils';
 import { join } from 'path';
 import { IApi } from 'valita';
 
