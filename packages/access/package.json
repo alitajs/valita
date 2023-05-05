@@ -19,7 +19,11 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "^0.0.8"
+    "@alitajs/vue-utils": "workspace:^",
+    "@vueuse/core": "^9.13.0",
+    "valita": "workspace:*",
+    "vue": "^3.2.47",
+    "vue-router": "4.1.6"
   },
   "peerDependencies": {
     "@vueuse/core": "^9.13.0",

@@ -1,6 +1,5 @@
 import { isPlainObject } from "@umijs/utils/compiled/lodash";
-import { computed, reactive, unref } from "valita";
-
+import createComponent from "./createComponent";
 const state = reactive({
     roles: {{{roles}}},
     currentRoleId: '',
@@ -115,7 +114,6 @@ const hasAccess = async (path: string) => {
 }
 
 export const install = (app) => {
-    app.directive("access", createDirective(useAccess));
     app.component("Access", createComponent(useAccess));
 };
 
@@ -126,13 +124,14 @@ export const access = {
     setAccess,
     match,
     getAccess: getAllowAccessIds,
+    install
 };
 
 export const hasAccessSync = (path) => {
     return match(unref(path), getAllowAccessIds());
 }
 
-export const useAccess = (path) => {
+export const useAccess = (path):boolean => {
     const allowPageIds = computed(getAllowAccessIds);
     const result = computed(() => {
         return match(unref(path), allowPageIds.value);

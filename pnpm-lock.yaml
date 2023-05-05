@@ -342,6 +342,7 @@ packages:
       semver: registry.npmmirror.com/semver/6.3.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
 
   registry.npmmirror.com/@babel/eslint-parser/7.19.1_@babel+core@7.21.0:
     resolution: {integrity: sha512-AqNf2QWt1rtu2/1rLswy6CDP7H9Oh3mMhk177Y67Rg8d7RD9WfOLLv8CGn6tisFvS2htm86yIe1yLF6I1UDaGQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/eslint-parser/-/eslint-parser-7.19.1.tgz}
@@ -14958,6 +14959,7 @@ packages:
     name: to-fast-properties
     version: 2.0.0
     engines: {node: '>=4'}
+    dev: true
 
   registry.npmmirror.com/to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/to-regex-range/-/to-regex-range-5.0.1.tgz}

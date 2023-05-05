@@ -10,32 +10,40 @@ export default (api: IApi) => {
     config: {
       schema({ zod }) {
         return zod.object({
-          roles: zod.map(zod.string(), zod.array(zod.string()))
+          roles: zod.object({})
         }).required();
       }
     },
     enableBy: api.EnableBy.config,
   });
 
-  const { roles = {} } = api.config.access || {};
-  const accessTpl = readFileSync(join(__dirname, 'templates', './core.tpl'), 'utf-8');
+  api.onGenerateFiles(() => {
+    const { roles = {} } = api.config.access || {};
+    const accessTpl = readFileSync(join(__dirname, 'templates', './core.tpl'), 'utf-8');
 
-  api.writeTmpFile({
-    path: join(DIR_NAME, 'index.ts'),
-    noPluginDir: true,
-    content: Mustache.render(accessTpl, {
-      roles: JSON.stringify(roles)
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'index.ts'),
+      noPluginDir: true,
+      content: Mustache.render(accessTpl, {
+        'roles': JSON.stringify(roles)
+      }),
+      context: {}
     })
-  })
-  api.writeTmpFile({
-    path: join(DIR_NAME, 'runtime.ts'),
-    noPluginDir: true,
-    tplPath: join(__dirname, 'templates/runtime.tpl')
-  })
-  api.writeTmpFile({
-    path: join(DIR_NAME, 'types.d.ts'),
-    noPluginDir: true,
-    tplPath: join(__dirname, 'templates/types.d.ts')
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'runtime.ts'),
+      noPluginDir: true,
+      content: readFileSync(join(__dirname, './templates/runtime.tpl'), 'utf-8')
+    })
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'createComponent.ts'),
+      noPluginDir: true,
+      content: readFileSync(join(__dirname, './templates/createComponent.tpl'), 'utf-8')
+    })
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'types.d.ts'),
+      noPluginDir: true,
+      content: readFileSync(join(__dirname, './templates/types.d.ts'), 'utf-8'),
+    })
   })
   api.addRuntimePlugin(() => {
     return [`${api.paths.absTmpPath}/${DIR_NAME}/runtime.ts`];

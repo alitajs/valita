@@ -1,4 +1,4 @@
-import { access } from "./core";
+import { access } from "./index";
 
 export function onMounted({ app }) {
     app.use(access);

@@ -1,9 +1,13 @@
 <template>
   <div class="page">
+    <!-- <button v-if="accessOption" type="button">admin</button> -->
   </div>
 </template>
 
 <script setup lang="ts">
+// import { access, useAccess } from '@alitajs/access'
+// access.setRole('admin')
+// const accessOption = useAccess('/admin');
 </script>
 
 <style scoped lang="less">
