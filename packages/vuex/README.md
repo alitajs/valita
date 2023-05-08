@@ -2,9 +2,9 @@
 
 ## store
 
-在 `/src` 的目录里，约定 `/stores` 下的文件为 `vuex` 的对应的子仓库。
+在 `/src` 的目录里，约定 `/stores` 下的文件为 `vuex` 的对应 `store`。
 
-**新建子仓库后，要重新启动**
+**新建 `store` 后，要重新启动**
 
 #### state
 
@@ -35,12 +35,12 @@ const mutations = {
 
 context 具备一下参数：
 
-- commit: 执行 `mutations` 的方法，如果希望执行其他 `store` 的 `mutations`，在第三个参数上增加 `{ root: true }`，代表执行的是全局仓库。
-- state: 当前仓库下的数据源。
-- rootState: 全局仓库下的数据源。
+- commit: 执行 `mutations` 的方法，如果希望执行其他 `store` 的 `mutations`，在第三个参数上增加 `{ root: true }`，代表执行的是全局 `store`。
+- state: 当前 `store` 下的数据源。
+- rootState: 全局 `store` 下的数据源。
 - dispatch: 执行其他的 `action`
-- getters: 当前仓库下的派生状态
-- rootGetters: 全局仓库下的派生状态
+- getters: 当前 `store` 下的派生状态
+- rootGetters: 全局 `store` 下的派生状态
 
 ## 在页面中使用
 
