@@ -3,8 +3,10 @@
     <Admin />
     <Normal />
     <div>当前权限:{{ access.currentRole }}</div>
-    <button @click="() => set('normal')">setNormal</button>
-    <button @click="() => set('admin')">setAdmin</button>
+    <div>
+      <button type="primary" @click="set('normal')">setNormal</button>
+      <button type="primary" @click="set('admin')">setAdmin</button>
+    </div>
   </div>
 </template>
 
@@ -15,7 +17,6 @@ import Normal from '../components/normal.vue'
 const access = useAccess('/');
 const set = (role) => {
   access.setRole(role);
-  console.log(access);
 }
 </script>
 
@@ -29,7 +30,13 @@ const set = (role) => {
   height: 100%;
 }
 
-.van-button {
+button {
   margin: 10px;
+  height: 40px;
+  width: 120px;
+  background-color: rgb(208, 177, 237);
+  border: 0;
+  font-size: 20px;
+  border-radius: 5px;
 }
 </style>

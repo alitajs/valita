@@ -71,9 +71,6 @@ importers:
 
   examples/with-access:
     dependencies:
-      '@alitajs/vue-access':
-        specifier: workspace:*
-        version: link:../../packages/access
       valita:
         specifier: workspace:*
         version: link:../../packages/valita

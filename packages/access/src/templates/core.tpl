@@ -1,6 +1,7 @@
 import { isPlainObject } from "@umijs/utils/compiled/lodash";
 import createComponent from "./createComponent";
 import createDirective from "./createDirective";
+import AccessReturn from "./types.d.ts";
 
 const state = reactive({
     roles: {{{ roles }}},
@@ -138,10 +139,4 @@ export const useAccess = (path: Ref<any> | string): AccessReturn => {
         hasAccess: result,
         currentRole: computed(() => state.currentRole),
     }
-}
-
-export type AccessReturn = {
-    setRole: (role: Promise<any> | string) => void;
-    hasAccess: ComputedRefImpl;
-    currentRole: ComputedRefImpl;
 }

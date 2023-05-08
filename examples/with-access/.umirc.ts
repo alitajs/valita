@@ -1,5 +1,4 @@
 export default {
-    plugins: ['@alitajs/vue-access'],
     access: {
         defaultRole: "normal",
         roles: {

@@ -10,7 +10,6 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "@alitajs/vue-access": "workspace:*",
     "valita": "workspace:*"
   }
 }

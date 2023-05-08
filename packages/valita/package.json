@@ -42,6 +42,7 @@
     "@alitajs/vue-route-props": "^0.0.8",
     "@alitajs/vue-utils": "^0.0.8",
     "@alitajs/vue-vant-layout": "^0.0.8",
+    "@alitajs/vue-access": "^0.0.8",
     "@umijs/preset-vue": "4.0.0-canary.20230424.1",
     "@umijs/utils": "4.0.0-canary.20230424.1",
     "@vueuse/core": "^10.1.0",
