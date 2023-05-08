@@ -8,12 +8,11 @@ const createDirective = (useAccess) => {
     return {
         beforeMount(el) {
             const ctx = {};
-            ctx.watch = (path: string) => {
+            ctx.watch = (access) => {
                 el._display = el._display || el.style.display;
-                const access = useAccess(path);
-                setDisplay(el, access);
-                return watch(access, () => {
-                    setDisplay(el, access);
+                setDisplay(el, access.hasAccess);
+                return watch(access.hasAccess, () => {
+                    setDisplay(el, access.hasAccess);
                 })
             }
             cache.set(el, ctx);
