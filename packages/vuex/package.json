@@ -24,13 +24,13 @@
   },
   "peerDependencies": {
     "valita": "workspace:*"
-    
   },
   "publishConfig": {
     "access": "public"
   },
   "authors": [
-    "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
+    "congxiaochen <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)",
+    "hang1017 <437132124@qq.com> (https://github.com/hang1017)"
   ],
   "gitHead": "c7d4cdfa912d9ed615f40befec22dcc1e196c829"
 }

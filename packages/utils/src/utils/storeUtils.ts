@@ -1,5 +1,6 @@
 import { glob, winPath } from '@umijs/utils';
 import { join } from 'path';
+import { readFileSync } from 'fs';
 import { IApi } from 'valita';
 
 export class StoreUtils {
@@ -8,30 +9,41 @@ export class StoreUtils {
     this.api = api as IApi;
   }
 
-  getAllStores() {
+  getAllStores(type: 'vuex' | 'pinia') {
     const stores = [
       ...this.getStores({
         base: join(this.api.paths.absSrcPath, 'stores'),
         pattern: '**/*.{ts,tsx,js,jsx}',
+        type,
       }),
       ...this.getStores({
         base: join(this.api.paths.absPagesPath),
         pattern: '**/stores/**/*.{ts,tsx,js,jsx}',
+        type
       }),
     ];
     return stores;
   }
 
-  getStores(opts: { base: string; pattern?: string }) {
-    return glob
+  getStores(opts: { base: string; pattern?: string, type: 'vuex' | 'pinia' }) {
+    const a = glob
       .sync(opts.pattern || '**/*.{ts,js}', {
         cwd: opts.base,
         absolute: true,
       })
-      .map(winPath)
-      .filter(() => {
-        // TODO: 按规则识别是 pinia store 的文件
+      .map(winPath);
+    const b = a.filter((file) => {
+      if (/\.d.ts$/.test(file)) return false;
+      if (/\.(test|e2e|spec).([jt])sx?$/.test(file)) return false;
+      const indexContent = readFileSync(file, 'utf-8')
+      if (indexContent.indexOf('defineStore') !== -1 && opts.type === 'pinia') {
         return true;
-      });
+      } else if (indexContent.indexOf('defineStore') === -1 && opts.type === 'vuex') {
+        return true;
+      }
+      return false;
+    });
+    return b;
   }
 }
+

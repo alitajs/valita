@@ -1,18 +1,10 @@
-import { getUserLibDir, StoreUtils, withTmpPath } from '@alitajs/vue-utils';
+import { getUserLibDir, StoreUtils, withTmpPath, getFileName } from '@alitajs/vue-utils';
 import { dirname } from 'path';
 import { IApi } from 'valita';
 
 export function getAllStores(api: IApi) {
-  return new StoreUtils(api).getAllStores();
+  return new StoreUtils(api).getAllStores('vuex');
 }
-
-export function getStoreName(fileUrl: string) {
-  let url = '';
-  const list = fileUrl.split('/');
-  url = list[list.length - 1];
-  url = url.split('.')[0];
-  return url;
-};
 
 export default (api: IApi) => {
   const vuex =
@@ -52,24 +44,18 @@ export default (api: IApi) => {
       path: 'runtime.tsx',
       content: `
 import { createStore } from 'vuex';
-${stores
-          .map((file: string) => {
-            return `import ${getStoreName(file)} from '${file}';`;
-          })
-          .join('\n')}
+${stores.map((file: string) => { return `import ${getFileName(file)} from '${file}';`; }).join('\n')}
 
 const store = createStore({
-modules: {
-${stores.map((file: string) => {
-            return `${getStoreName(file)},`;
-          }).join('\n')}
-}
+  modules: {
+    ${stores.map((file: string) => { return `${getFileName(file)}` })}
+  }
 })
 
 export function onMounted({ app }) {
   app.use(store);
 }
-      `,
+`,
     });
   })
 

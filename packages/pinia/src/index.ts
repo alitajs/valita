@@ -3,7 +3,7 @@ import { dirname } from 'path';
 import { IApi } from 'valita';
 
 export function getAllStores(api: IApi) {
-  return new StoreUtils(api).getAllStores();
+  return new StoreUtils(api).getAllStores('pinia');
 }
 
 export default (api: IApi) => {
