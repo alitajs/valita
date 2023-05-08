@@ -128,7 +128,7 @@ export const hasAccessSync = (path) => {
     return match(unref(path), getAllowAccessIds());
 }
 
-export const useAccess = (path) => {
+export const useAccess = (path: Ref<any> | string): AccessReturn => {
     const allowPageIds = computed(getAllowAccessIds);
     const result = computed(() => {
         return match(unref(path), allowPageIds.value);
@@ -138,4 +138,10 @@ export const useAccess = (path) => {
         hasAccess: result,
         currentRole: computed(() => state.currentRole),
     }
+}
+
+export type AccessReturn = {
+    setRole: (role: Promise<any> | string) => void;
+    hasAccess: ComputedRefImpl;
+    currentRole: ComputedRefImpl;
 }

@@ -1,1 +1,1 @@
-export default {}
+export { AccessReturn } from './index';
