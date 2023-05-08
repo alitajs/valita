@@ -1,8 +1,10 @@
 import { isPlainObject } from "@umijs/utils/compiled/lodash";
 import createComponent from "./createComponent";
+import createDirective from "./createDirective";
+
 const state = reactive({
-    roles: {{{roles}}},
-    currentRoleId: '',
+    roles: {{{ roles }}},
+    currentRole: '{{ defaultRole }}',
     currentAccessIds: []
 });
 
@@ -19,7 +21,7 @@ const rolePromiseList: Promise<any>[] = [];
 const accessPromiseList: Promise<any>[] = [];
 
 const getAllowAccessIds = () => {
-    const roleAccessIds = state.roles[state.currentRoleId];
+    const roleAccessIds = state.roles[state.currentRole];
     if (roleAccessIds.length > 0) {
         return state.currentAccessIds.concat(roleAccessIds);
     }
@@ -49,14 +51,14 @@ const setAccess = async (access) => {
             setAccess(access.accessIds);
         }
         if (access.roleId) {
-            setRoleId(access.roleId)
+            setRole(access.roleId)
         }
         return;
     }
     state.currentAccessIds = access;
 }
 
-const syncSetRoleId = (promise: Promise<any>) => {
+const syncSetRole = (promise: Promise<any>) => {
     rolePromiseList.push(promise);
     promise.then((roleId) => {
         setRole(roleId);
@@ -72,9 +74,9 @@ const syncSetRoleId = (promise: Promise<any>) => {
 
 const setRole = async (role: Promise<any> | string) => {
     if (isPromise(role)) {
-        return syncSetRoleId(role as Promise<any>);
+        return syncSetRole(role as Promise<any>);
     }
-    state.currentRoleId = role as string;
+    state.currentRole = role as string;
 }
 
 const match = (path: string, accessIds: string[]) => {
@@ -102,11 +104,11 @@ const match = (path: string, accessIds: string[]) => {
 }
 
 const isReady = () => {
-    return rolePromiseList.length || accessPromiseList.length;
+    return !(rolePromiseList.length || accessPromiseList.length);
 }
 
 const hasAccess = async (path: string) => {
-    if (!isReady()) {
+    if (isReady()) {
         return match(path, getAllowAccessIds());
     }
     await Promise.all(rolePromiseList.concat(accessPromiseList));
@@ -115,26 +117,25 @@ const hasAccess = async (path: string) => {
 
 export const install = (app) => {
     app.component("Access", createComponent(useAccess));
+    app.directive("access", createDirective(useAccess));
 };
 
 export const access = {
-    hasAccess,
-    isReady,
-    setRole,
-    setAccess,
-    match,
-    getAccess: getAllowAccessIds,
-    install
+   install
 };
 
 export const hasAccessSync = (path) => {
     return match(unref(path), getAllowAccessIds());
 }
 
-export const useAccess = (path):boolean => {
+export const useAccess = (path) => {
     const allowPageIds = computed(getAllowAccessIds);
     const result = computed(() => {
         return match(unref(path), allowPageIds.value);
     });
-    return result;
-};
+    return {
+        setRole,
+        hasAccess: result,
+        currentRole: computed(() => state.currentRole),
+    }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "@alitajs/access",
+  "name": "@alitajs/vue-access",
   "version": "0.0.8",
-  "description": "@alitajs/access",
+  "description": "@alitajs/vue-access",
   "homepage": "https://github.com/alitajs/valita/tree/master/packages/access#readme",
   "bugs": "https://github.com/alitajs/valita/issues",
   "repository": {
@@ -19,17 +19,12 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "@alitajs/vue-utils": "workspace:^",
-    "@vueuse/core": "^9.13.0",
+    "@alitajs/vue-access": "workspace:*",
     "valita": "workspace:*",
-    "vue": "^3.2.47",
     "vue-router": "4.1.6"
   },
   "peerDependencies": {
-    "@vueuse/core": "^9.13.0",
-    "valita": "workspace:*",
-    "vue": "^3.2.47",
-    "vue-router": "4.1.6"
+    "valita": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

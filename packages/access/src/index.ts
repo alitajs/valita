@@ -10,6 +10,7 @@ export default (api: IApi) => {
     config: {
       schema({ zod }) {
         return zod.object({
+          defaultRole: zod.string(),
           roles: zod.object({})
         }).required();
       }
@@ -18,14 +19,14 @@ export default (api: IApi) => {
   });
 
   api.onGenerateFiles(() => {
-    const { roles = {} } = api.config.access || {};
+    const { roles = {}, defaultRole } = api.config.access || {};
     const accessTpl = readFileSync(join(__dirname, 'templates', './core.tpl'), 'utf-8');
-
     api.writeTmpFile({
       path: join(DIR_NAME, 'index.ts'),
       noPluginDir: true,
       content: Mustache.render(accessTpl, {
-        'roles': JSON.stringify(roles)
+        defaultRole,
+        roles: JSON.stringify(roles),
       }),
       context: {}
     })
@@ -38,6 +39,11 @@ export default (api: IApi) => {
       path: join(DIR_NAME, 'createComponent.ts'),
       noPluginDir: true,
       content: readFileSync(join(__dirname, './templates/createComponent.tpl'), 'utf-8')
+    })
+    api.writeTmpFile({
+      path: join(DIR_NAME, 'createDirective.ts'),
+      noPluginDir: true,
+      content: readFileSync(join(__dirname, './templates/createDirective.tpl'), 'utf-8')
     })
     api.writeTmpFile({
       path: join(DIR_NAME, 'types.d.ts'),

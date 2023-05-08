@@ -1,8 +1,9 @@
 export default {
-    plugins: ['@alitajs/access'],
+    plugins: ['@alitajs/vue-access'],
     access: {
+        defaultRole: "normal",
         roles: {
-            admin: ['/admin'],
+            admin: ['/admin', '/normal'],
             normal: ['/normal']
         }
     }
