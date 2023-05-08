@@ -37,6 +37,7 @@
     "@alitajs/vue-i18n": "^0.0.8",
     "@alitajs/vue-keepalive": "^0.0.8",
     "@alitajs/vue-pinia": "^0.0.8",
+    "@alitajs/vue-vuex": "^0.0.8",
     "@alitajs/vue-request": "^0.0.8",
     "@alitajs/vue-route-props": "^0.0.8",
     "@alitajs/vue-utils": "^0.0.8",
