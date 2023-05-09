@@ -1,4 +1,4 @@
-import { isPlainObject } from "@umijs/utils/compiled/lodash";
+import { isPlainObject } from "{{{ lodashPath }}}";
 import createComponent from "./createComponent";
 import createDirective from "./createDirective";
 import AccessReturn from "./types.d.ts";
@@ -51,8 +51,8 @@ const setAccess = async (access) => {
         if (access.accessIds) {
             setAccess(access.accessIds);
         }
-        if (access.roleId) {
-            setRole(access.roleId)
+        if (access.role) {
+            setRole(access.role)
         }
         return;
     }
@@ -136,6 +136,7 @@ export const useAccess = (path: Ref<any> | string): AccessReturn => {
     });
     return {
         setRole,
+        setAccess,
         hasAccess: result,
         currentRole: computed(() => state.currentRole),
     }

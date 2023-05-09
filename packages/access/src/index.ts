@@ -1,6 +1,6 @@
-import { Mustache } from '@umijs/utils';
+import { Mustache, winPath } from '@alitajs/vue-utils';
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { dirname, join } from 'path';
 import { IApi } from 'valita';
 const DIR_NAME = 'plugin-access';
 
@@ -17,16 +17,17 @@ export default (api: IApi) => {
     },
     enableBy: api.EnableBy.config,
   });
-
   api.onGenerateFiles(() => {
     const { roles = {}, defaultRole } = api.config.access || {};
     const accessTpl = readFileSync(join(__dirname, 'templates', './core.tpl'), 'utf-8');
+    const lodash = winPath(dirname(require.resolve('lodash-es')));
     api.writeTmpFile({
       path: join(DIR_NAME, 'index.ts'),
       noPluginDir: true,
       content: Mustache.render(accessTpl, {
         defaultRole,
         roles: JSON.stringify(roles),
+        lodashPath: `${lodash}`,
       }),
       context: {}
     })

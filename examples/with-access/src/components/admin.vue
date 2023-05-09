@@ -1,5 +1,5 @@
 <template>
-    <div v-access="access">Admin</div>
+    <div v-access="access">只有Admin可见</div>
 </template>
 
 <script setup lang="ts">
