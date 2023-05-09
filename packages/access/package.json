@@ -19,7 +19,6 @@
     "dev": "father dev"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21",
     "@alitajs/vue-utils": "^0.0.8",
     "valita": "workspace:*"
   },

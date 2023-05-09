@@ -20,14 +20,14 @@ export default (api: IApi) => {
   api.onGenerateFiles(() => {
     const { roles = {}, defaultRole } = api.config.access || {};
     const accessTpl = readFileSync(join(__dirname, 'templates', './core.tpl'), 'utf-8');
-    const lodash = winPath(dirname(require.resolve('lodash-es')));
+    const lodashPath = winPath(dirname(require.resolve('lodash/package.json')));
     api.writeTmpFile({
       path: join(DIR_NAME, 'index.ts'),
       noPluginDir: true,
       content: Mustache.render(accessTpl, {
         defaultRole,
         roles: JSON.stringify(roles),
-        lodashPath: `${lodash}`,
+        lodashPath: `${lodashPath}`,
       }),
       context: {}
     })
