@@ -18,6 +18,7 @@ export default {
     }],
     access: {
         defaultRole: "normal",
+        refreshAccess: true,
         roles: {
             admin: ['/admin'],
             normal: ['/normal']

@@ -11,6 +11,7 @@ export default (api: IApi) => {
       schema({ zod }) {
         return zod.object({
           defaultRole: zod.string(),
+          refreshAccess: zod.boolean(),
           roles: zod.object({})
         }).required();
       }
@@ -18,7 +19,7 @@ export default (api: IApi) => {
     enableBy: api.EnableBy.config,
   });
   api.onGenerateFiles(() => {
-    const { roles = {}, defaultRole } = api.config.access || {};
+    const { roles = {}, defaultRole = '', refreshAccess = true } = api.config.access || {};
     const accessTpl = readFileSync(join(__dirname, 'templates', './core.tpl'), 'utf-8');
     const lodashPath = winPath(dirname(require.resolve('lodash/package.json')));
     api.writeTmpFile({
@@ -28,6 +29,7 @@ export default (api: IApi) => {
         defaultRole,
         roles: JSON.stringify(roles),
         lodashPath: `${lodashPath}`,
+        refreshAccess: `${refreshAccess}`
       }),
       context: {}
     })

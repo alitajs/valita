@@ -4,6 +4,18 @@
 
 在此插件设计中，一个页面权限对应着一个路由，例如当访问'/admin'这个路由时，如果当前角色并不具有这个路由的权限，那么则不会渲染这个组件。
 
+```ts
+export default {
+    access: {
+        defaultRole: "normal", //默认角色
+        refreshAccess: true, //切换角色时清空路径数组
+        roles: {
+            admin: ['/admin'],
+            normal: ['/normal']
+        }
+    }
+};
+```
 
 使用示例：
 ```vue
@@ -29,3 +41,9 @@ export interface AccessReturn {
 
 
 在valita中使用了自定义指令directive的方式，通过v-access这个指令，传入useAccess返回的对象，来控制组件的渲染。
+
+## 设置Access
+通过useAccess().setAccess()设置的path，将与在配置文件中写的role对应的Access共同生效。
+
+## 设置Role
+在通过setRole().setRole()设置角色时，通过setAccess设置的path将被重置。默认值为true。

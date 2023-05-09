@@ -17,7 +17,6 @@ function isPromise(obj) {
     );
 }
 
-
 const rolePromiseList: Promise<any>[] = [];
 const accessPromiseList: Promise<any>[] = [];
 
@@ -78,6 +77,10 @@ const setRole = async (role: Promise<any> | string) => {
         return syncSetRole(role as Promise<any>);
     }
     state.currentRole = role as string;
+    if({{{refreshAccess}}})
+    {
+        state.currentAccessIds = [];
+    }
 }
 
 const match = (path: string, accessIds: string[]) => {
