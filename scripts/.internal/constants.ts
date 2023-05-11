@@ -10,6 +10,6 @@ export const PATHS = {
 } as const;
 
 export const SCRIPTS = {
-  DEV: 'vfather dev',
+  DEV: 'father dev',
   BUILD: 'father build',
 } as const;

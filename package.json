@@ -32,26 +32,26 @@
     "start": "cd examples/demo && npm run start"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.16.5",
     "@umijs/lint": "4.0.0-canary.20230424.1",
     "@umijs/utils": "4.0.0-canary.20230424.1",
     "consola": "^2.15.3",
-    "eslint": "^8.37.0",
-    "father": "^4.1.8",
+    "eslint": "^8.40.0",
+    "father": "^4.1.9",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
-    "lerna": "^6.6.1",
-    "prettier": "^2.8.7",
+    "lerna": "^6.6.2",
+    "prettier": "^2.8.8",
     "prettier-plugin-organize-imports": "^3.2.2",
     "prettier-plugin-packagejson": "^2.4.3",
     "start-server-and-test": "^1.15.4",
-    "stylelint": "^15.4.0",
-    "tsx": "^3.12.6",
+    "stylelint": "^15.6.1",
+    "tsx": "^3.12.7",
     "typescript": "^4.9.5",
     "valita": "workspace:*",
     "vs": "workspace:*",
-    "webpack": "^5.78.0",
-    "zx": "^7.2.1"
+    "webpack": "^5.82.0",
+    "zx": "^7.2.2"
   },
   "packageManager": "pnpm@7.24.2"
 }

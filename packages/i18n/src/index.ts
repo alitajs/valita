@@ -46,14 +46,14 @@ export { useI18n } from '${i18n}';
 import { createI18n } from '${i18n}';
 import { useLocalStorage } from '${vueuse}';
 ${languages
-  .map(({ paths, lang, country }) => {
-    return paths
-      .map((file: string, index) => {
-        return `import lang_${lang}${country}${index} from "${file}";`;
-      })
-      .join('\n');
-  })
-  .join('\n')}
+          .map(({ paths, lang, country }) => {
+            return paths
+              .map((file: string, index) => {
+                return `import lang_${lang}${country}${index} from "${file}";`;
+              })
+              .join('\n');
+          })
+          .join('\n')}
 export const i18n = createI18n({
     globalInjection: true,
     allowComposition: true,

@@ -15,6 +15,7 @@ export default (api: IApi) => {
     require.resolve('@alitajs/vue-request'),
     require.resolve('@alitajs/vue-keepalive'),
     require.resolve('@alitajs/vue-i18n'),
+    require.resolve('@alitajs/vue-access'),
   ];
   if (api.userConfig.appType === 'pc') {
     corePlugins.push(require.resolve('@alitajs/vue-antd-layout'));

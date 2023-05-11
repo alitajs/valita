@@ -1,5 +1,5 @@
 {
-  "name": "@example/with-pinia",
+  "name": "@example/with-access",
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=1 valita build",

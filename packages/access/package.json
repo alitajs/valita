@@ -1,0 +1,32 @@
+{
+  "name": "@alitajs/vue-access",
+  "version": "0.0.8",
+  "description": "@alitajs/vue-access",
+  "homepage": "https://github.com/alitajs/valita/tree/master/packages/access#readme",
+  "bugs": "https://github.com/alitajs/valita/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alitajs/valita"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build",
+    "dev": "father dev"
+  },
+  "dependencies": {
+    "@alitajs/vue-utils": "^0.0.8",
+    "valita": "workspace:*"
+  },
+  "peerDependencies": {
+    "valita": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c7d4cdfa912d9ed615f40befec22dcc1e196c829"
+}
