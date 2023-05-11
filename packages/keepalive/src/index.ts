@@ -18,6 +18,8 @@ export default (api: IApi) => {
     enableBy: api.EnableBy.config,
   });
 
+  api.addRuntimePluginKey(() => ['getKeepAlive']);
+
   const configStringify = (config: (string | RegExp)[]) => {
     return config.map((item) => {
       if (item instanceof RegExp) {
@@ -43,6 +45,7 @@ export default (api: IApi) => {
         keepalive: configStringify(
           (api.userConfig.keepalive as KeepAliveType) || [],
         ),
+        hasGetKeepalive: api.appData.appJS?.exports.includes('getKeepAlive'),
       }),
     });
     api.writeTmpFile({
