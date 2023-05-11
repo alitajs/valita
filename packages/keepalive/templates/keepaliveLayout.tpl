@@ -8,12 +8,30 @@
   <script setup lang="ts">
   import { useRouter, useRoute } from 'vue-router';
   import { ref, onMounted, watch } from 'vue';
+  {{#hasGetKeepalive}}
+  import { getKeepAlive } from "@/app";
+  {{/hasGetKeepalive}}
   import { keepaliveEmitter } from './emitter';
   
   const route = useRoute();
   const router = useRouter();
 
+  const runtimeKeepalive = ref([]);
   const keepAlive = ref(getInitKeepAlive());
+
+  {{#hasGetKeepalive}}
+  const init = async () => {
+    try {
+      const runtime = await getKeepAlive(keepAlive);
+      runtimeKeepalive.value = runtime || [];
+      if(runtime && !!runtime.length) {
+        setKeepAlive();
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  {{/hasGetKeepalive}}
 
   onMounted(() => {
     keepaliveEmitter?.useSubscription?.((event: any) => {
@@ -26,6 +44,9 @@
           break;
       }
     })
+    {{#hasGetKeepalive}}
+    init();
+    {{/hasGetKeepalive}}
   })
 
   function dropByCacheKey(path: string) {
@@ -60,7 +81,7 @@
   }
   
   function checkIsKeepAlive(_route: any) {
-      const isKeep = isKeepPath([{{{ keepalive }}}], _route.path, _route);
+      const isKeep = isKeepPath([...[{{{ keepalive }}}], ...runtimeKeepalive.value], _route.path, _route);
       if (isKeep) {
         const matched = _route.matched;
         const component = matched[matched.length - 1].components.default;
@@ -78,10 +99,14 @@
     return name ? [name] : [];
   }
 
-  router.afterEach(() => {
+  function setKeepAlive () {
     const name = checkIsKeepAlive(route);
     if (name && !keepAlive.value.includes(name)) {
       keepAlive.value = [...keepAlive.value, name];
     }
+  }
+
+  router.afterEach(() => {
+    setKeepAlive();
   });
   </script>

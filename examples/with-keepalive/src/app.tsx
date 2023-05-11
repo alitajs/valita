@@ -63,6 +63,12 @@ const tabBar: TabBarProps = {
   backgroungColor: '#Fff',
   list: tabList,
 };
+
+export async function getKeepAlive(keepaliva: any[]) {
+  console.log('getKeepAlive: ', keepaliva);
+  return [/name/, /users/];
+}
+
 export const mobileLayout = {
   theme: 'dark',
   documentTitle: 'Dai',
