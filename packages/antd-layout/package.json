@@ -19,7 +19,9 @@
     "dev": "father dev"
   },
   "peerDependencies": {
-    "valita": "workspace:*"
+    "valita": "workspace:*",
+    "@alitajs/vue-utils": "^0.0.8",
+    "antd": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"
