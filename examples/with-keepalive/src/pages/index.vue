@@ -11,12 +11,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { useAppData } from 'valita';
+import { ref } from "vue";
+import { useAppData } from "valita";
 
-const hello = ref<string>('hello vue');
+const hello = ref<string>("hello vue");
 const { routes } = useAppData();
-const isKeepAlive = routes['index']?.meta?.isKeepAlive;
+const isKeepAlive = routes["index"]?.meta?.keepalive;
 </script>
 <style lang="less" scoped>
 div {
@@ -26,6 +26,6 @@ div {
 
 <script lang="ts">
 export const routeProps = {
-  meta: { title: '首页', isKeepAlive: true },
+  meta: { title: "首页", keepalive: true },
 };
 </script>
