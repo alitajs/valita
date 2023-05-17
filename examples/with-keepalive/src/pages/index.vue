@@ -16,7 +16,7 @@ import { useAppData } from 'valita';
 
 const hello = ref<string>('hello vue');
 const { routes } = useAppData();
-const isKeepAlive = routes['index']?.meta?.keepalive;
+const isKeepAlive = routes['index']?.meta?.keepAlive;
 </script>
 <style lang="less" scoped>
 div {
@@ -26,6 +26,6 @@ div {
 
 <script lang="ts">
 export const routeProps = {
-  meta: { title: '首页', keepalive: true },
+  meta: { title: '首页', keepAlive: true },
 };
 </script>

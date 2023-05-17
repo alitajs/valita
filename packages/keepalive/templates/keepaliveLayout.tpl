@@ -72,7 +72,7 @@
       }
     })
     if (isKeep === false) {
-      isKeep = !!route?.keepAlive || !!route.meta?.keepalive;
+      isKeep = !!route?.keepAlive || !!route.meta?.keepAlive;
     }
     if (route?.redirect) {
       isKeep = false;

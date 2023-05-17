@@ -30,6 +30,6 @@ const dropByNameCache = () => {
 
 <script lang="ts">
 export const routeProps = {
-  meta: { title: 'name 页面', keepalive: true },
+  meta: { title: 'name 页面', keepAlive: true },
 };
 </script>
