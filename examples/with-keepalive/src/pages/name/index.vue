@@ -10,26 +10,26 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onActivated } from "vue";
-import { dropByCacheKey } from "valita";
+import { ref, onMounted, onActivated } from 'vue';
+import { dropByCacheKey } from 'valita';
 
 const nameValue = ref(0);
 
 onMounted(() => {
-  console.log("this is onMounted");
+  console.log('this is onMounted');
 });
 
 onActivated(() => {
-  console.log("this is onActivated");
+  console.log('this is onActivated');
 });
 
 const dropByNameCache = () => {
-  dropByCacheKey("/name");
+  dropByCacheKey('/name');
 };
 </script>
 
 <script lang="ts">
 export const routeProps = {
-  meta: { title: "name 页面", keepalive: true },
+  meta: { title: 'name 页面', keepalive: true },
 };
 </script>
