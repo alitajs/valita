@@ -11,7 +11,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 import { useAppData } from 'valita';
 
 const hello = ref<string>('hello vue');
