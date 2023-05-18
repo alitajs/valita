@@ -5,9 +5,7 @@
   <button @click="nameValue++">add</button>
   <router-link to="/">Go to Home</router-link>
   <div>
-    <van-button type="primary" @click="dropByNameCache"
-      >dropByCacheKey</van-button
-    >
+    <van-button type="primary" @click="dropByNameCache">dropByCacheKey</van-button>
   </div>
 </template>
 
@@ -27,5 +25,11 @@ onActivated(() => {
 
 const dropByNameCache = () => {
   dropByCacheKey('/name');
+};
+</script>
+
+<script lang="ts">
+export const routeProps = {
+  meta: { title: 'name 页面', keepAlive: true },
 };
 </script>
