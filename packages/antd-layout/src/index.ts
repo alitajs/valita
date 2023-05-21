@@ -2,7 +2,9 @@ import { getUserLibDir, Mustache } from '@alitajs/vue-utils';
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { IApi } from "valita";
+
 const DIR_NAME = 'plugin-layout';
+
 export default (api: IApi) => {
     api.describe({
         key: 'antdLayout',
